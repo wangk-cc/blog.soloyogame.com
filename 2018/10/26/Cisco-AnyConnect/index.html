@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="下载安装Cisco AnyConnect到手机点击下载Cisco AnyConnect  配置服务器地址打开Cisco AnyConnect添加连结 录入服务器地址服务器地址为：vip.txvpn2016.com，说明随意，其他保持不变。然后务必需要保存。  激活Cisco AnyConnect如下图点击开启 输入用户名 输入用户密码 访问网站 购买价格 购买操作加微信公众号fastapp2016">
+<meta name="keywords" content="Laravel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS使用Cisco AnyConnect访问Google">
+<meta property="og:url" content="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/index.html">
+<meta property="og:site_name" content="索罗游文档">
+<meta property="og:description" content="下载安装Cisco AnyConnect到手机点击下载Cisco AnyConnect  配置服务器地址打开Cisco AnyConnect添加连结 录入服务器地址服务器地址为：vip.txvpn2016.com，说明随意，其他保持不变。然后务必需要保存。  激活Cisco AnyConnect如下图点击开启 输入用户名 输入用户密码 访问网站 购买价格 购买操作加微信公众号fastapp2016">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/assets/9jA6DKdAEK.jpeg">
+<meta property="og:image" content="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/assets/804D75DbLK.jpeg">
+<meta property="og:image" content="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/assets/f68BBimC10.jpeg">
+<meta property="og:image" content="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/assets/dII3dmElfa.jpeg">
+<meta property="og:image" content="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/assets/FGifFKEha8.png">
+<meta property="og:image" content="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/assets/eBj6i7cECJ.png">
+<meta property="og:image" content="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/assets/8A7l7laJaK.jpeg">
+<meta property="og:image" content="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/assets/i1I7cJiBgI.jpg">
+<meta property="og:image" content="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/assets/KcJcHieIDC.png">
+<meta property="og:updated_time" content="2018-10-26T09:36:31.787Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS使用Cisco AnyConnect访问Google">
+<meta name="twitter:description" content="下载安装Cisco AnyConnect到手机点击下载Cisco AnyConnect  配置服务器地址打开Cisco AnyConnect添加连结 录入服务器地址服务器地址为：vip.txvpn2016.com，说明随意，其他保持不变。然后务必需要保存。  激活Cisco AnyConnect如下图点击开启 输入用户名 输入用户密码 访问网站 购买价格 购买操作加微信公众号fastapp2016">
+<meta name="twitter:image" content="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/assets/9jA6DKdAEK.jpeg">
+
+
+
+
+
+
+  <link rel="canonical" href="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>iOS使用Cisco AnyConnect访问Google | 索罗游文档</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2bd3044b52292acde67f2a48dfa24786";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">索罗游文档</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">游戏平台开发文档</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="索罗游">
+      <meta itemprop="description" content="游戏平台开发文档">
+      <meta itemprop="image" content="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="索罗游文档">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">iOS使用Cisco AnyConnect访问Google<a href="https://gitee.com/gitwk/cn.wangk.wk/edit/2018/source/_posts/Cisco-AnyConnect.md" class="post-edit-link" title="编辑" target="_blank">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-26 17:19:46 / 修改时间：17:36:31" itemprop="dateCreated datePublished" datetime="2018-10-26T17:19:46+08:00">2018-10-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Laravel/" itemprop="url" rel="index"><span itemprop="name">Laravel</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="下载安装Cisco-AnyConnect到手机"><a href="#下载安装Cisco-AnyConnect到手机" class="headerlink" title="下载安装Cisco AnyConnect到手机"></a>下载安装Cisco AnyConnect到手机</h1><p><a href="https://itunes.apple.com/cn/app/cisco-anyconnect/id1135064690?mt=8" target="_blank" rel="noopener">点击下载Cisco AnyConnect</a></p>
+<p><img src="assets/9jA6DKdAEK.jpeg" alt="mark"></p>
+<h1 id="配置服务器地址"><a href="#配置服务器地址" class="headerlink" title="配置服务器地址"></a>配置服务器地址</h1><h2 id="打开Cisco-AnyConnect"><a href="#打开Cisco-AnyConnect" class="headerlink" title="打开Cisco AnyConnect"></a>打开Cisco AnyConnect</h2><h2 id="添加连结"><a href="#添加连结" class="headerlink" title="添加连结"></a>添加连结</h2><p><img src="assets/804D75DbLK.jpeg" alt="mark"></p>
+<h2 id="录入服务器地址"><a href="#录入服务器地址" class="headerlink" title="录入服务器地址"></a>录入服务器地址</h2><p>服务器地址为：vip.txvpn2016.com，说明随意，其他保持不变。然后务必需要保存。</p>
+<p><img src="assets/f68BBimC10.jpeg" alt="mark"></p>
+<h1 id="激活Cisco-AnyConnect"><a href="#激活Cisco-AnyConnect" class="headerlink" title="激活Cisco AnyConnect"></a>激活Cisco AnyConnect</h1><h2 id="如下图点击开启"><a href="#如下图点击开启" class="headerlink" title="如下图点击开启"></a>如下图点击开启</h2><p><img src="assets/dII3dmElfa.jpeg" alt="mark"></p>
+<h2 id="输入用户名"><a href="#输入用户名" class="headerlink" title="输入用户名"></a>输入用户名</h2><p><img src="assets/FGifFKEha8.png" alt="mark"></p>
+<h2 id="输入用户密码"><a href="#输入用户密码" class="headerlink" title="输入用户密码"></a>输入用户密码</h2><p><img src="assets/eBj6i7cECJ.png" alt="mark"></p>
+<h2 id="访问网站"><a href="#访问网站" class="headerlink" title="访问网站"></a>访问网站</h2><p><img src="assets/8A7l7laJaK.jpeg" alt="mark"></p>
+<h1 id="购买价格"><a href="#购买价格" class="headerlink" title="购买价格"></a>购买价格</h1><p><img src="assets/i1I7cJiBgI.jpg" alt="mark"></p>
+<h1 id="购买操作"><a href="#购买操作" class="headerlink" title="购买操作"></a>购买操作</h1><h2 id="加微信公众号"><a href="#加微信公众号" class="headerlink" title="加微信公众号"></a>加微信公众号</h2><p><code>fastapp2016</code></p>
+<p><img src="assets/KcJcHieIDC.png" alt="mark"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>索罗游</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/" title="iOS使用Cisco AnyConnect访问Google">https://game.soloyogame.com/2018/10/26/Cisco-AnyConnect/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Laravel/" rel="tag"># Laravel</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/08/得词移动即将发布ASM行业报告/" rel="next" title="得词移动即将发布ASM行业报告：竞争最激烈关键词广告展示">
+                <i class="fa fa-chevron-left"></i> 得词移动即将发布ASM行业报告：竞争最激烈关键词广告展示
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQ1NC8xMzk4Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200"
+                alt="索罗游" />
+            
+              <p class="site-author-name" itemprop="name">索罗游</p>
+              <p class="site-description motion-element" itemprop="description">游戏平台开发文档</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载安装Cisco-AnyConnect到手机"><span class="nav-number">1.</span> <span class="nav-text">下载安装Cisco AnyConnect到手机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置服务器地址"><span class="nav-number">2.</span> <span class="nav-text">配置服务器地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#打开Cisco-AnyConnect"><span class="nav-number">2.1.</span> <span class="nav-text">打开Cisco AnyConnect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加连结"><span class="nav-number">2.2.</span> <span class="nav-text">添加连结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#录入服务器地址"><span class="nav-number">2.3.</span> <span class="nav-text">录入服务器地址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#激活Cisco-AnyConnect"><span class="nav-number">3.</span> <span class="nav-text">激活Cisco AnyConnect</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如下图点击开启"><span class="nav-number">3.1.</span> <span class="nav-text">如下图点击开启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入用户名"><span class="nav-number">3.2.</span> <span class="nav-text">输入用户名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入用户密码"><span class="nav-number">3.3.</span> <span class="nav-text">输入用户密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问网站"><span class="nav-number">3.4.</span> <span class="nav-text">访问网站</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#购买价格"><span class="nav-number">4.</span> <span class="nav-text">购买价格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#购买操作"><span class="nav-number">5.</span> <span class="nav-text">购买操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加微信公众号"><span class="nav-number">5.1.</span> <span class="nav-text">加微信公众号</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">索罗游文档 -  <a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备11047967号</a></span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

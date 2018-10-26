@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="在我们的游戏运营中，版本更新是必不可少的规划之一。在迭代速度方面，现在很多手游产品都能保持30天一个版本的速度。但是大部分人都是比较关注产品上线那一波，而我们应该考虑得更长，因为这不是一波就结束。现在我们看到很多产品后期版本迭代的计划是没有的。 贸然全覆盖伤害大 每次更新DAU降低15%-30%从手游的爆发到现在，已经经历3年多的时候。游戏的各类更新方式也层出不穷，游戏陀螺从渠道方面的反馈了解到，">
+<meta name="keywords" content="游戏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每次更新DAU降低15%-30% 你还不重视版本迭代？">
+<meta property="og:url" content="https://game.soloyogame.com/2018/09/28/banbendiedai/index.html">
+<meta property="og:site_name" content="索罗游文档">
+<meta property="og:description" content="在我们的游戏运营中，版本更新是必不可少的规划之一。在迭代速度方面，现在很多手游产品都能保持30天一个版本的速度。但是大部分人都是比较关注产品上线那一波，而我们应该考虑得更长，因为这不是一波就结束。现在我们看到很多产品后期版本迭代的计划是没有的。 贸然全覆盖伤害大 每次更新DAU降低15%-30%从手游的爆发到现在，已经经历3年多的时候。游戏的各类更新方式也层出不穷，游戏陀螺从渠道方面的反馈了解到，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-17T08:28:36.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="每次更新DAU降低15%-30% 你还不重视版本迭代？">
+<meta name="twitter:description" content="在我们的游戏运营中，版本更新是必不可少的规划之一。在迭代速度方面，现在很多手游产品都能保持30天一个版本的速度。但是大部分人都是比较关注产品上线那一波，而我们应该考虑得更长，因为这不是一波就结束。现在我们看到很多产品后期版本迭代的计划是没有的。 贸然全覆盖伤害大 每次更新DAU降低15%-30%从手游的爆发到现在，已经经历3年多的时候。游戏的各类更新方式也层出不穷，游戏陀螺从渠道方面的反馈了解到，">
+
+
+
+
+
+
+  <link rel="canonical" href="https://game.soloyogame.com/2018/09/28/banbendiedai/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>每次更新DAU降低15%-30% 你还不重视版本迭代？ | 索罗游文档</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2bd3044b52292acde67f2a48dfa24786";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">索罗游文档</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">游戏平台开发文档</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://game.soloyogame.com/2018/09/28/banbendiedai/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="索罗游">
+      <meta itemprop="description" content="游戏平台开发文档">
+      <meta itemprop="image" content="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="索罗游文档">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">每次更新DAU降低15%-30% 你还不重视版本迭代？<a href="https://gitee.com/gitwk/cn.wangk.wk/edit/2018/source/_posts/banbendiedai.md" class="post-edit-link" title="编辑" target="_blank">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-28 22:13:20" itemprop="dateCreated datePublished" datetime="2018-09-28T22:13:20+08:00">2018-09-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-17 16:28:36" itemprop="dateModified" datetime="2018-10-17T16:28:36+08:00">2018-10-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在我们的游戏运营中，版本更新是必不可少的规划之一。在迭代速度方面，现在很多手游产品都能保持30天一个版本的速度。但是大部分人都是比较关注产品上线那一波，而我们应该考虑得更长，因为这不是一波就结束。现在我们看到很多产品后期版本迭代的计划是没有的。</p>
+<h1 id="贸然全覆盖伤害大-每次更新DAU降低15-30"><a href="#贸然全覆盖伤害大-每次更新DAU降低15-30" class="headerlink" title="贸然全覆盖伤害大 每次更新DAU降低15%-30%"></a>贸然全覆盖伤害大 每次更新DAU降低15%-30%</h1><p>从手游的爆发到现在，已经经历3年多的时候。游戏的各类更新方式也层出不穷，游戏陀螺从渠道方面的反馈了解到，现在的版本更新主要有两类：</p>
+<p>1、全包覆盖，不管是什么内容，只能重新下包更新；<br>2、一些资源类的热更新，如果涉及到底层代码的话只能靠全包覆盖更新，特别是Unity开发的产品。</p>
+<p>在现实中的在版本迭代方式上，还是有很多厂商选择全覆盖式的安装更新方式，这种方式有一个非常大的问题，那就是对游戏用户的伤害，每次更新活跃度至少降低15%~30%。我们知道收入的来源=DAU<em>付费率</em>ARPU，如果DAU下降的非常厉害，那必然会对收入有着非常大的一样。然而这样的问题在国内的CP中依旧存在。</p>
+<p>如果选择了全覆盖式更新，建议保持在3~6个月一次。同时也要有相关的配合举措：</p>
+<ul>
+<li>如果必须要全覆盖更新，建议3~7天前在游戏内公布，可以以游戏公告、文件、滚屏等形式通知用户；</li>
+<li>更新可以做成一个运营活动，更新之后可以给用户一些小奖励，这在很大程度上会减缓DAU造成的损失，目前来看，一个季度一次热更新影响基本不大。</li>
+</ul>
+<h1 id="已经在被大厂采用中的热更新-更新只需“1分钟”"><a href="#已经在被大厂采用中的热更新-更新只需“1分钟”" class="headerlink" title="已经在被大厂采用中的热更新 更新只需“1分钟”"></a>已经在被大厂采用中的热更新 更新只需“1分钟”</h1><p>热更新是目前已经大厂的常用方式，它也被称为动态更新。目前在App Store和国内安卓渠道已经比较常见，采用这种方式的好处在于，“绕过渠道审核”的快速更新。很多时候我们会遇到游戏的BUG，或配置一些东西、活动等，发现配置错了需要马上更新，服务端更新是最快的一种方式，但手游现在可能做不到，那就只能通过客户端的更新把这些资源替换掉。</p>
+<p>热更新最大的优势就是在出现问题后，瞬间更新几百K或是一两兆的内容就可以解决。某CP也向游戏陀螺分享了这样的观点：版本迭代的热更新，不需要重新提交。更新只需1分钟，服务器就可以重启。例如国内有近百家的渠道，有10家渠道在进行版本更新，他们的上线是不一样的，但他们的服务器却是同一个。这就会造成有的上去了，有的还没上。那么服务器开还是开？只能是先停服等大家都接好了在开。但这是对用户伤害非常大的行为。二热更新可以解决。</p>
+<h1 id="热更新有技术门槛-CP请视情况使用"><a href="#热更新有技术门槛-CP请视情况使用" class="headerlink" title="热更新有技术门槛 CP请视情况使用"></a>热更新有技术门槛 CP请视情况使用</h1><p>如果是iOS游戏，热更新的优势会非常明显，毕竟App Store的审核时间有点长。不过App Store对这种“绕过审核”的行为是不支持，但目前也没有表现明显的反对。而国内安卓渠道在这方面比较支持，游戏陀螺沟通了一些渠道负责人，在他们看来，快速解决问题是最关心的问题，而非是否要提审。不过通常来说既然是和渠道有合作，在基本的审核常见问题方面是不会有犯错误的 。</p>
+<p>热更新有一定的技术门槛，基本上大家都是各做各的并没有一个很好的开源交流。而在开发方面游戏需要以cocos开发，用lua脚本写程序，才可以实现不更新客户端只更新脚本的“绕过审核”。其实Unity3D开发的产品也可以用，具体用到的是ulua（可百度搜索具体信息）。</p>
+<p>最后补充一下分包下载的问题：</p>
+<p>由于一些游戏包体过大，CP常会采用分包的下载的形式。但分包的话，一定要把第二个包的时间足够往后推。因为当用户还没有建立忠诚度的时候，让用户在去下一个包容易流失，我们的初衷是让下载+更新比整包更适合。一般来说，用户在玩2个小时后就可以建立一个玩家对游戏的认可度，这个时候在去下一个包更容易接受。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>索罗游</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://game.soloyogame.com/2018/09/28/banbendiedai/" title="每次更新DAU降低15%-30% 你还不重视版本迭代？">https://game.soloyogame.com/2018/09/28/banbendiedai/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/游戏/" rel="tag"># 游戏</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/28/从产品和运营两方面打造让渠道叫好的优质手游/" rel="next" title="从产品和运营两方面打造让渠道叫好的优质手游！">
+                <i class="fa fa-chevron-left"></i> 从产品和运营两方面打造让渠道叫好的优质手游！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/28/yonghu/" rel="prev" title="什么是用户？估计90%人不知道">
+                什么是用户？估计90%人不知道 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQ1NC8xMzk4Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200"
+                alt="索罗游" />
+            
+              <p class="site-author-name" itemprop="name">索罗游</p>
+              <p class="site-description motion-element" itemprop="description">游戏平台开发文档</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#贸然全覆盖伤害大-每次更新DAU降低15-30"><span class="nav-number">1.</span> <span class="nav-text">贸然全覆盖伤害大 每次更新DAU降低15%-30%</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#已经在被大厂采用中的热更新-更新只需“1分钟”"><span class="nav-number">2.</span> <span class="nav-text">已经在被大厂采用中的热更新 更新只需“1分钟”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#热更新有技术门槛-CP请视情况使用"><span class="nav-number">3.</span> <span class="nav-text">热更新有技术门槛 CP请视情况使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">索罗游文档 -  <a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备11047967号</a></span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

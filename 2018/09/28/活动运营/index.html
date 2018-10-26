@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="活动的本质五花八门的活动有很多，但是所有活动都有同一个本质，就是：通过奖励来激励用户进行某些特定的行为。 活动核心有2点：奖励、用户行为 你能在任何一个活动中找到这2点： 转发本微博并@3位好友，就有机会获得土豪金一台 行为：转发并@3位好友    奖励：土豪金 充值超过2000元宝，即可额外获得200元宝。 行为：充值2000元宝        奖励：200元宝 春节期间登陆游戏的玩家，每天都能">
+<meta name="keywords" content="游戏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="活动运营">
+<meta property="og:url" content="https://game.soloyogame.com/2018/09/28/活动运营/index.html">
+<meta property="og:site_name" content="索罗游文档">
+<meta property="og:description" content="活动的本质五花八门的活动有很多，但是所有活动都有同一个本质，就是：通过奖励来激励用户进行某些特定的行为。 活动核心有2点：奖励、用户行为 你能在任何一个活动中找到这2点： 转发本微博并@3位好友，就有机会获得土豪金一台 行为：转发并@3位好友    奖励：土豪金 充值超过2000元宝，即可额外获得200元宝。 行为：充值2000元宝        奖励：200元宝 春节期间登陆游戏的玩家，每天都能">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-17T08:28:36.498Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="活动运营">
+<meta name="twitter:description" content="活动的本质五花八门的活动有很多，但是所有活动都有同一个本质，就是：通过奖励来激励用户进行某些特定的行为。 活动核心有2点：奖励、用户行为 你能在任何一个活动中找到这2点： 转发本微博并@3位好友，就有机会获得土豪金一台 行为：转发并@3位好友    奖励：土豪金 充值超过2000元宝，即可额外获得200元宝。 行为：充值2000元宝        奖励：200元宝 春节期间登陆游戏的玩家，每天都能">
+
+
+
+
+
+
+  <link rel="canonical" href="https://game.soloyogame.com/2018/09/28/活动运营/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>活动运营 | 索罗游文档</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2bd3044b52292acde67f2a48dfa24786";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">索罗游文档</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">游戏平台开发文档</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://game.soloyogame.com/2018/09/28/活动运营/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="索罗游">
+      <meta itemprop="description" content="游戏平台开发文档">
+      <meta itemprop="image" content="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="索罗游文档">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">活动运营<a href="https://gitee.com/gitwk/cn.wangk.wk/edit/2018/source/_posts/活动运营.md" class="post-edit-link" title="编辑" target="_blank">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-28 19:27:03" itemprop="dateCreated datePublished" datetime="2018-09-28T19:27:03+08:00">2018-09-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-17 16:28:36" itemprop="dateModified" datetime="2018-10-17T16:28:36+08:00">2018-10-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="活动的本质"><a href="#活动的本质" class="headerlink" title="活动的本质"></a>活动的本质</h1><p>五花八门的活动有很多，但是所有活动都有同一个本质，就是：通过奖励来激励用户进行某些特定的行为。</p>
+<p>活动核心有2点：奖励、用户行为</p>
+<p>你能在任何一个活动中找到这2点：</p>
+<p>转发本微博并@3位好友，就有机会获得土豪金一台</p>
+<p>行为：转发并@3位好友    奖励：土豪金</p>
+<p>充值超过2000元宝，即可额外获得200元宝。</p>
+<p>行为：充值2000元宝        奖励：200元宝</p>
+<p>春节期间登陆游戏的玩家，每天都能领取一份红包</p>
+<p>行为：登陆                         奖励：红包</p>
+<p>情人节期间，玩家之间可以互相送花，获得鲜花最多的10位玩家可以获得情人节限量时装一套</p>
+<p>行为：送花                         奖励：限量时装</p>
+<p>所以，活动归根结底就是一种激励！是在现有游戏设计基础上做出的激励。</p>
+<p>既然是激励，活动就不是一个“必需品”，不要指望活动能够拯救产品，能够让产品有质的飞越。</p>
+<p>最典型的例子就是coc，他们的活动非常少，但是这并不影响它成为全球最赚钱的游戏之一。而国内很多游戏里活动一大堆，这也并不能帮助游戏成为全球最赚钱的游戏。</p>
+<h1 id="活动是双刃剑"><a href="#活动是双刃剑" class="headerlink" title="活动是双刃剑"></a>活动是双刃剑</h1><p>先讲一个小故事：</p>
+<p>有一个老人，孤独一人生活，有一天几个隔壁小孩在他家门口玩耍。老人看着非常开心，于是给了这几个小孩一些糖果。之后几天，小孩每天都会来老人的家门口玩耍，老人也会给他们一些糖果。直到有一天，老人的糖果发完了，小孩来了之后发现没有糖果了，于是气呼呼的离开了，不再到这里玩耍了。</p>
+<p>游戏邦上也有一篇文章说明了相同的心理——《举例分析游戏奖励的心理学原理》，原文地址：<a href="http://gamerboom.com/archives/80070" target="_blank" rel="noopener">http://gamerboom.com/archives/80070</a></p>
+<p>最能唤起大家共鸣的例子就是KPI。</p>
+<p>KPI就像是活动里的“行为”，绩效奖金就是活动力的“奖励”。</p>
+<p>大部分游戏从业者都都有一个梦想：跟团队一起做出最牛逼的产品，获得用户和同行的认可。</p>
+<p>但是KPI一上，我们的目标就变了，变成了充值，消耗，活跃用户，新增用户……</p>
+<p>上有政策，下有对策。面对这些KPI，大家总能找到一些办法，其中不乏一些“短期见效，长期却有害”的办法。</p>
+<p>而活动就是这把双刃剑，他具有激励的作用，但是使用不当则会造成很多后遗症：</p>
+<p>l  喧宾夺主，改变了玩家的游戏目标</p>
+<p>l  活动定价和产出量打破游戏设计，导致游戏内的经济系统不健康甚至崩溃</p>
+<p>l  团队依赖活动的短期效果，而不去追求更高的游戏品质</p>
+<p>l  透支游戏生命周期，加速游戏死亡</p>
+<p>所以，对待活动一定要理性，不要只看他光鲜亮丽的一面。</p>
+<p>某游戏做了一个活动，收入提高了几倍；</p>
+<p>某游戏通过一个节日活动冲到了排行榜前几位；</p>
+<p>某游戏单日收入突破千万，因为他们做了一个大型活动。</p>
+<p>这些都是片面之言，去看看玩家对这些活动反馈，（有条件的话）再看看他们后台里真实的数据。你就会发现那些华丽的外衣下面藏着一些伤口。</p>
+<h1 id="运营角度看活动"><a href="#运营角度看活动" class="headerlink" title="运营角度看活动"></a>运营角度看活动</h1><p>活动6要素</p>
+<p>对于运营来说，每个活动都需要考虑6个维度：目的，受众，时间，位置，流程，人员</p>
+<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>活动目的</p>
+<p>每个活动都应该有一个目的，没有目的的活动是盲目的，我个人把活动目的归为4大类：</p>
+<h3 id="产品补充"><a href="#产品补充" class="headerlink" title="产品补充"></a>产品补充</h3><p>现在几乎所有产品里都内置了很多活动的，其本质目的在于让游戏变得更加丰富，加入更多的乐趣点和玩法。而不是直接刺激玩家去登陆或者充值。</p>
+<p>例如：</p>
+<p>大转盘，节日BOSS，吃鸡活动（《大掌门》之后，很多游戏都有了吃鸡活动，连名字都不改），限时任务，活跃值，跨服竞技场……</p>
+<p>当我们把这些系统全部去掉，其实并不影响正常游戏，但是这些系统能够增加游戏的乐趣性，激励玩家更多的参与到游戏中。这类活动已经有很多标准的模板可以参考，做出差异化比较难。</p>
+<h3 id="激励用户"><a href="#激励用户" class="headerlink" title="激励用户"></a>激励用户</h3><p>大家见的最多的就是这类活动，规则简单，直接刺激玩家进行某些行为：</p>
+<h4 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h4><p>签到活动，《大掌门》里的神仙姐姐，还有一些短期的登陆送道具的活动</p>
+<h4 id="充值"><a href="#充值" class="headerlink" title="充值"></a>充值</h4><p>现在很主流的内置活动是首冲双倍和首冲大礼包。除此之外还能经常看到一些短期的充值活动，充值到不同档次会送不同的奖励。</p>
+<h4 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h4><p>上文提到的情人节送花活动就是为了激励玩家之间进行交互。送花和帮助朋友的农场抓虫算是积极的互动。</p>
+<p>还有一些消极的互动，例如COC中的抢夺资源和传奇里的PK杀人。</p>
+<h4 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h4><p>分享则是利用现有的玩家来扩散传播，吸引游戏外的潜在玩家进入游戏。</p>
+<p>例如疯狂猜图里的微信求助（虽然疯狂猜图里的求助不算是活动，但他是非常成功的分享案例），微博转发等活动。</p>
+<p>PS：可能有人认为签到活动是内置在游戏里的，应该归类到产品补充里。但是这里是从活动目的来分类的，而不是通过活动位置或者形式分类。签到活动最直接的目的是激励用户登陆，而不是补充产品乐趣。</p>
+<h3 id="讨好渠道"><a href="#讨好渠道" class="headerlink" title="讨好渠道"></a>讨好渠道</h3><p>现在手游产品的数量和种类都非常多，已经不存在空白或者竞争小的游戏类型。渠道已经从找产品过渡到挑产品的阶段。</p>
+<p>数据最漂亮的产品才能获得渠道的青睐，而大部分数据接近的产品来说，关系的作用就体现出来了。</p>
+<p>所以，在上面的大背景下，我们十分有必要跟渠道建立良好的关系，而活动就是建立关系的方式之一。</p>
+<p>例如：</p>
+<p>在渠道论坛上送一些手机平板之类的实物奖励，或者针对部分渠道做一些定制的线上活动，发一些定制的激活码，定制的礼包等。</p>
+<h3 id="应付上级"><a href="#应付上级" class="headerlink" title="应付上级"></a>应付上级</h3><p>这里的上级特指“不靠谱”的上级。而不是说帮助你偷懒。</p>
+<p>理想状态下，我们做事情不应该以应付上级为目的。但是理想很丰满，现实是很残酷。难免会遇到一些不靠谱的上级。今天脑子一热想到一个不靠谱的点子让你去做，明天又看到一篇软文说某活动帮助某游戏冲进排行榜前10，于是让你去抄过来……</p>
+<p>如果没有办法改变自己的工作环境，那就只能巧妙的来适应这种环境。</p>
+<p>不靠谱的上级都有2个特点：刷存在感和健忘</p>
+<p>所以，当你遇到不靠谱的上级提出一些不靠谱的点子时。不要反驳，满足他的优越感。然后用缓兵之计让时间来冲淡。过几天他就会忘的一干二净。</p>
+<h3 id="受众"><a href="#受众" class="headerlink" title="受众"></a>受众</h3><p>每个活动都要清楚目标受众是谁，根据不同细分用户群体的特点来设计针对性的活动内容！</p>
+<p>针对免费玩家，就不要指望他们能花个百八千；</p>
+<p>针对大R玩家，活动流程就不要太复杂，别花钱后还需要走个迷宫或者完成拼图才能获得奖励；</p>
+<p>针对帮会的活动，就要加入一些PVP或者排名的元素，不要做成帮会成员各玩各的，都不想关；</p>
+<p>针对外部的潜在用户，就不要把活动限定在自己的贴吧，要走到微博或者微信上才能传播开来。</p>
+<h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><p>首先是平台特性：移动设备的在线高峰在上班时间，午休时间，睡觉前。而游戏则在中午和晚上是高峰。</p>
+<p>其次是用户使用特点：手机用户更多利用碎片时间来玩游戏，pad设备在会利用晚上的大块时间来玩游戏。</p>
+<p>所以在活动设计上，个人的几个建议是：</p>
+<p>l  活动时间尽量灵活。尽量不要搞那种只有前5分钟才能进入，开始后无法进入的活动。</p>
+<p>l  时间范围不要太短。比如答题活动能做全天（或者几个小时）就不要限定到30分钟内。</p>
+<p>l  活动参与过程不要太长，一个活动最好控制在20分钟以内。不然参与起来比较累。</p>
+<h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h3><p>一个签到活动可以在很多场景里做：游戏内，贴吧，微博。</p>
+<p>不同的位置都有不同的作用：</p>
+<p>游戏内：针对现有用户，活动信息更容易被用户了解，参与更方便，技术手段更灵活。</p>
+<p>贴吧：促进现有玩家在游戏外建立关系，促进玩家之间的交流。</p>
+<p>微信：利用现有用户的强关系链，传播范围小，但是效果好，活动方式十分有限，可能需要二次开发。</p>
+<p>微博：利用现有用户的弱关系，快速广泛的传播，有一些现有的活动方式可以直接使用。</p>
+<p>所以，要根据活动的目的和活动需要支持来选择合适的位置。</p>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p>流程部分则涉及到2个部分，一个部分是工作流程，一个是用户参与流程。</p>
+<p>工作流程是执行层面：技术配合的部分能否在规定时间到位，功能测试和配置测试是否完善，美术做的东西能否在规定时间内完成……</p>
+<p>用户参与流程则是设计层面：用户需要先做什么，后做什么，流程是否流程，过程是否合理，限制门槛是否适中……</p>
+<p>流程的东西光说不练是不行的，只要从这2个角度去思考，多执行，多尝试，多总结。流程方面就能轻车熟路。</p>
+<h3 id="人员"><a href="#人员" class="headerlink" title="人员"></a>人员</h3><p>有些活动可能需要美术，技术甚至渠道的一些配合，协作和沟通是免不了的。所以如果想在这方面做的很好，就需要了解清楚他们的特点是什么：</p>
+<h4 id="美术"><a href="#美术" class="headerlink" title="美术"></a>美术</h4><p>美术需求是很难精确表达的。除了用在哪，尺寸，文案等精确的信息外，美术表现层面需要从感性的方面来描述你的需求，</p>
+<p>如果你的需求只写：做一个侠客。相信你得到的就是一个青涩的男子手中拿着一把剑，仅此而已。</p>
+<p>如果你说：需要一个门户上使用的广告素材，尺寸是800×600. 文案是xxxxxx。画面的意境是描述一个顶级高手，他心爱的女人被仇人所杀。所以他心中充满了仇恨和犹豫。</p>
+<p>这个时候你得到的东西可能就是一个看上去很沧桑的大侠背靠一棵大树，用深邃的眼神望着天边的圆月，伴随着秋风和落叶。</p>
+<h4 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h4><p>与美术相比，技术需求则不要给任何发挥的空间，需求要非常明确细致。他们最讨厌含糊不清的需求，越具体他们越喜欢。</p>
+<h4 id="渠道"><a href="#渠道" class="headerlink" title="渠道"></a>渠道</h4><p>他们不收你的工资，所以他们可以不配合你甚至不理你。但是他们的KPI能够影响他们的收入，所以要搞清楚他们的KPI是什么，然后将你的需求跟他们的KPI绑定到一起，这样一来大家配合起来才能高效。</p>
+<h1 id="玩家角度看活动"><a href="#玩家角度看活动" class="headerlink" title="玩家角度看活动"></a>玩家角度看活动</h1><p>活动本身其实就是一个产品，不仅要关注产品本身，还要关注用户的使用感受。就好像做出一个有用工具，却没有人知道，知道的人也不知道怎么用，那么再有用的东西也会大打折扣。</p>
+<p>所以我们要关注用户接触活动的每一步流程，不断优化，实现最高的转化率，就如下面漏斗一样。</p>
+<p>玩家参与活动流程</p>
+<h2 id="发现"><a href="#发现" class="headerlink" title="发现"></a>发现</h2><p>不要以为做了活动，玩家就一定知道，我在《幻想精灵》这款产品里做过监测。只有30%的玩家会主动的打开活动公告面板，剩下的70%用户完全不知道我们做了什么活动。</p>
+<p>发现活动是第一步，让玩家发现我认为主要有2种思路：推和拉。</p>
+<h3 id="拉"><a href="#拉" class="headerlink" title="拉"></a>拉</h3><p>拉主要是传统的方式，通过公告，活动入口的方式吸引玩家来关注。</p>
+<p>比较好的方式就是在游戏首页里加入一个活动入口，每当有新的活动时，入口会闪烁或者跳动，从而吸引玩家点击进入。</p>
+<p>登陆公告我认为不是一个很好的方式，玩家打开游戏最急迫的就是开始玩游戏，而不是看公告，特别是纯文字的公告，更是没有查看的欲望。</p>
+<h3 id="推"><a href="#推" class="headerlink" title="推"></a>推</h3><p>推则是游戏主动的将活动信息推给玩家。这种方式的好处就是到达率很多，能够有效的扩大发现活动的用户范围。但是弊端也很明显：会骚扰到用户。</p>
+<h3 id="首先是推的方式："><a href="#首先是推的方式：" class="headerlink" title="首先是推的方式："></a>首先是推的方式：</h3><p>l  推送。不但可以触及活跃用户，还能激活一些睡眠用户（安装但不玩）。但是一定要注意内容和频率，内容要玩家很感兴趣，频率不宜过高。</p>
+<p>l  邮件（游戏内或游戏外）。这种方式比较常见，但是由于邮件的字数限制和表现力限制，所以在邮件内容上需要精心的设计，让玩家快速抓住要点，不要写一大堆没用的文字。</p>
+<h3 id="其次是推的内容："><a href="#其次是推的内容：" class="headerlink" title="其次是推的内容："></a>其次是推的内容：</h3><p>需要仔细斟酌。天天给玩家发充值消费的活动肯定会构成骚扰，频率很高的常规活动如果每次都发，玩家一定会烦。所以最好挑选重要的节日活动来发，这样玩家才有新鲜感。具体文案上追求小而精，不要做大而全。</p>
+<h3 id="最后就是推的范围："><a href="#最后就是推的范围：" class="headerlink" title="最后就是推的范围："></a>最后就是推的范围：</h3><p>不要给一个不花钱的玩家推送充值5000块钱的活动，明确活动的受众群体，做出针对性的细分推广，尽量做到精准的推送。</p>
+<h2 id="了解"><a href="#了解" class="headerlink" title="了解"></a>了解</h2><p>当完成了第一步，下一步就是让玩家快速了解你的活动内容。</p>
+<p>这个部分主要做2点：文案好，表现力好</p>
+<p>文案方面</p>
+<p>文案追求简洁。不要花里胡哨，看着有诗意，但是看完不知所云。“充值送关羽”就比“青龙风起云涌”要更直观。</p>
+<p>简洁的基础上一定要做到准确！充值是累计充值还是单笔充值，所有人都能参与还是30级以上的参与。这些细节都需要十分准确，避免玩家误解，产生纠纷。</p>
+<p>表现力方面</p>
+<p>适当利用图片：图片比文字更容易吸引眼球，所以适当使用一些图片来刺激玩家的眼球。还是充值送关羽的例子，奖励部分写“关羽”2字和直接贴一张关羽的图片，效果会差很多！但是图片占用更多的容量（或流量），所以不要滥用，找关键的地方适当使用。</p>
+<p>突出重点文字：例如npc，参与活动入口，奖励。这些关键的信息都可以用有颜色来区分。但是也不能满篇都是五颜六色，反而显得眼花缭乱，无法突出重点。颜色一旦定好规则就不要轻易改动，例如npc用蓝色就一直用蓝色，不要随意更换。</p>
+<h2 id="参与"><a href="#参与" class="headerlink" title="参与"></a>参与</h2><p>这个部分能做的最大优化就是加入快捷跳转，充值活动就在旁边加一个充值按钮，转盘活动就加一个转盘的跳转。不要让玩家自己去找，尽量降低玩家参与的门槛。</p>
+<h2 id="评价、传播"><a href="#评价、传播" class="headerlink" title="评价、传播"></a>评价、传播</h2><p>这2个部分我们唯一能做的就是给玩家提供分享的渠道（微博，微信），让玩家能够便捷的进行分享。</p>
+<p>至于他们说些什么，就要看你的活动设计是否有趣，是否激起了玩家分享的欲望。</p>
+<p>如果你的活动思路是坑钱，那还是不要加这些分享渠道了，免得臭名远扬。</p>
+<h1 id="活动配合产品、公司策略"><a href="#活动配合产品、公司策略" class="headerlink" title="活动配合产品、公司策略"></a>活动配合产品、公司策略</h1><p>活动本身没有绝对的好坏，不能单从活动期间收入涨了多少来评价一个活动的好坏。</p>
+<p>不同的产品不能用同一套活动来通吃，不同的公司在不同的阶段也不能用相同的活动思路来做。</p>
+<h2 id="配合公司策略"><a href="#配合公司策略" class="headerlink" title="配合公司策略"></a>配合公司策略</h2><p>如果公司不追求短期利润，而是追求品质和口碑。那么在活动策略会上会更多的讲究趣味性，多做一些增加留存和交互的活动，少做很大额度的充值消费活动。</p>
+<p>例如我们西山居即将上线的《三国X》就会采用这种策略。</p>
+<p>如果公司想要出售或者上市，需要短期冲数据。那么就可以考虑留存活动和充值消费活动并重，实现漂亮的数据报表。</p>
+<p>所以活动不要凭自己的主观意愿瞎做，首先跟老板沟通好，公司是什么策略？活动怎么配合公司的策略？需要跟老板达成一致。</p>
+<h2 id="配合产品策略"><a href="#配合产品策略" class="headerlink" title="配合产品策略"></a>配合产品策略</h2><p>如果产品是一个创新类产品，需要不断打磨和探索。就要以“产品补充”类的活动为主，帮助开发团队提高产品品质。</p>
+<p>如果产品是一个“fast copy”的产品，而且还涉及到版权问题。目标就是短期赚一票走人。那么活动就以充值消费为主，能赚多少赚多少，能收多快收多快。</p>
+<p>产品方面则需要跟制作人进行深度交流，让开发与运营达成策略一致。在产品制作的过程中，我们的运营团队就开始跟《三国X》的开发团队进行了沟通。</p>
+<p>除了公司和产品外，市场环境也会影响到活动的整体策略。说这些其实就是想表达一个核心思想：</p>
+<p>针对不同的环境做不同的活动！</p>
+<p>现在的手游运营都是从端游和页游转过来的，不要一味的去套用过去的经验。</p>
+<p>手游行业的变化瞬息万变，如果你不适应环境，就会被行业淘汰！</p>
+<p>希望上面写到的东西能否给大家一些启发作用，但一定不要认为看了这些思路就能做出好的活动！</p>
+<p>如果想理解并运用这些思路，还是需要不断的实践，不断的总结经验教训，不断的学习。通过自身的实践来领悟自己的活动思路和想法。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>索罗游</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://game.soloyogame.com/2018/09/28/活动运营/" title="活动运营">https://game.soloyogame.com/2018/09/28/活动运营/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/游戏/" rel="tag"># 游戏</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/28/手游运营后台通用需求/" rel="next" title="手游运营后台通用需求">
+                <i class="fa fa-chevron-left"></i> 手游运营后台通用需求
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/28/手游CDN的应用/" rel="prev" title="手游CDN的应用">
+                手游CDN的应用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQ1NC8xMzk4Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200"
+                alt="索罗游" />
+            
+              <p class="site-author-name" itemprop="name">索罗游</p>
+              <p class="site-description motion-element" itemprop="description">游戏平台开发文档</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#活动的本质"><span class="nav-number">1.</span> <span class="nav-text">活动的本质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#活动是双刃剑"><span class="nav-number">2.</span> <span class="nav-text">活动是双刃剑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运营角度看活动"><span class="nav-number">3.</span> <span class="nav-text">运营角度看活动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目的"><span class="nav-number">3.1.</span> <span class="nav-text">目的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产品补充"><span class="nav-number">3.1.1.</span> <span class="nav-text">产品补充</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#激励用户"><span class="nav-number">3.1.2.</span> <span class="nav-text">激励用户</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#登陆"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">登陆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#充值"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">充值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交互"><span class="nav-number">3.1.2.3.</span> <span class="nav-text">交互</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分享"><span class="nav-number">3.1.2.4.</span> <span class="nav-text">分享</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讨好渠道"><span class="nav-number">3.1.3.</span> <span class="nav-text">讨好渠道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应付上级"><span class="nav-number">3.1.4.</span> <span class="nav-text">应付上级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#受众"><span class="nav-number">3.1.5.</span> <span class="nav-text">受众</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间"><span class="nav-number">3.1.6.</span> <span class="nav-text">时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位置"><span class="nav-number">3.1.7.</span> <span class="nav-text">位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程"><span class="nav-number">3.1.8.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#人员"><span class="nav-number">3.1.9.</span> <span class="nav-text">人员</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#美术"><span class="nav-number">3.1.9.1.</span> <span class="nav-text">美术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#技术"><span class="nav-number">3.1.9.2.</span> <span class="nav-text">技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#渠道"><span class="nav-number">3.1.9.3.</span> <span class="nav-text">渠道</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#玩家角度看活动"><span class="nav-number">4.</span> <span class="nav-text">玩家角度看活动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发现"><span class="nav-number">4.1.</span> <span class="nav-text">发现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#拉"><span class="nav-number">4.1.1.</span> <span class="nav-text">拉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推"><span class="nav-number">4.1.2.</span> <span class="nav-text">推</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首先是推的方式："><span class="nav-number">4.1.3.</span> <span class="nav-text">首先是推的方式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其次是推的内容："><span class="nav-number">4.1.4.</span> <span class="nav-text">其次是推的内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后就是推的范围："><span class="nav-number">4.1.5.</span> <span class="nav-text">最后就是推的范围：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#了解"><span class="nav-number">4.2.</span> <span class="nav-text">了解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参与"><span class="nav-number">4.3.</span> <span class="nav-text">参与</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评价、传播"><span class="nav-number">4.4.</span> <span class="nav-text">评价、传播</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#活动配合产品、公司策略"><span class="nav-number">5.</span> <span class="nav-text">活动配合产品、公司策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配合公司策略"><span class="nav-number">5.1.</span> <span class="nav-text">配合公司策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配合产品策略"><span class="nav-number">5.2.</span> <span class="nav-text">配合产品策略</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">索罗游文档 -  <a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备11047967号</a></span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

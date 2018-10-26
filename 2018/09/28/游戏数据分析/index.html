@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="用户用户是游戏的核心目标和服务对象。我们可以通过分析用户的特征找出用户对于游戏的期望，以便调整我们的游戏设计的想法。我们看待用户的种类主要有两个方向： 新增用户(获取用户)活跃用户(经营用户) 在用户的每一个阶段，我们都需要知道用户的价值，具体来说就是每一个用户整个生命周期为游戏厂商带来的价值。用户的价值来自于他们的消费行为，所以我们就是继续分析用户的购买行为，例如他们是什么样的用户，这样的玩家需">
+<meta name="keywords" content="游戏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="游戏数据分析">
+<meta property="og:url" content="https://game.soloyogame.com/2018/09/28/游戏数据分析/index.html">
+<meta property="og:site_name" content="索罗游文档">
+<meta property="og:description" content="用户用户是游戏的核心目标和服务对象。我们可以通过分析用户的特征找出用户对于游戏的期望，以便调整我们的游戏设计的想法。我们看待用户的种类主要有两个方向： 新增用户(获取用户)活跃用户(经营用户) 在用户的每一个阶段，我们都需要知道用户的价值，具体来说就是每一个用户整个生命周期为游戏厂商带来的价值。用户的价值来自于他们的消费行为，所以我们就是继续分析用户的购买行为，例如他们是什么样的用户，这样的玩家需">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-17T08:28:36.499Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="游戏数据分析">
+<meta name="twitter:description" content="用户用户是游戏的核心目标和服务对象。我们可以通过分析用户的特征找出用户对于游戏的期望，以便调整我们的游戏设计的想法。我们看待用户的种类主要有两个方向： 新增用户(获取用户)活跃用户(经营用户) 在用户的每一个阶段，我们都需要知道用户的价值，具体来说就是每一个用户整个生命周期为游戏厂商带来的价值。用户的价值来自于他们的消费行为，所以我们就是继续分析用户的购买行为，例如他们是什么样的用户，这样的玩家需">
+
+
+
+
+
+
+  <link rel="canonical" href="https://game.soloyogame.com/2018/09/28/游戏数据分析/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>游戏数据分析 | 索罗游文档</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2bd3044b52292acde67f2a48dfa24786";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">索罗游文档</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">游戏平台开发文档</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://game.soloyogame.com/2018/09/28/游戏数据分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="索罗游">
+      <meta itemprop="description" content="游戏平台开发文档">
+      <meta itemprop="image" content="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="索罗游文档">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">游戏数据分析<a href="https://gitee.com/gitwk/cn.wangk.wk/edit/2018/source/_posts/游戏数据分析.md" class="post-edit-link" title="编辑" target="_blank">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-28 17:01:41" itemprop="dateCreated datePublished" datetime="2018-09-28T17:01:41+08:00">2018-09-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-17 16:28:36" itemprop="dateModified" datetime="2018-10-17T16:28:36+08:00">2018-10-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h1><p>用户是游戏的核心目标和服务对象。我们可以通过分析用户的特征找出用户对于游戏的期望，以便调整我们的游戏设计的想法。我们看待用户的种类主要有两个方向：</p>
+<p>新增用户(获取用户)<br>活跃用户(经营用户)</p>
+<p>在用户的每一个阶段，我们都需要知道用户的价值，具体来说就是每一个用户整个生命周期为游戏厂商带来的价值。用户的价值来自于他们的消费行为，所以我们就是继续分析用户的购买行为，例如他们是什么样的用户，这样的玩家需要什么样的装备道具。</p>
+<h2 id="用户分析的维度"><a href="#用户分析的维度" class="headerlink" title="用户分析的维度"></a>用户分析的维度</h2><h3 id="用户的统计"><a href="#用户的统计" class="headerlink" title="用户的统计"></a>用户的统计</h3><p>一般来讲，我们可以用新增的账号数来统计新增的用户，但是这中间不免会出现一个小号的事情，即同一个自然人拥有多个账号。而我们在后面分析收入的时候，一般是基于人的消费能力而不是账号的消费能力。如果小号太多，那么实际的游戏人数就不可控，游戏活力实际上在下降而从账户代表的用户数量却无法观察到；另一个影响就是工作室的出现，会在一定程度上破坏游戏的平衡，导致其他玩家的体验下降。</p>
+<p>在一定程度上，我们可以统计设备ID来消除账户统计的不准确性。但是这样也无法进行全面地将工作室识别出来。如果这样进行统计的话，后续在收入的层面会有很多数据库的问题，所以在这方面影响不是很大的时候，可以适当忽略。</p>
+<h3 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h3><p>针对游戏产品发布的平台进行比较和分析</p>
+<h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><p>用户增长、下降的指标永远离不开时间这个维度，其本质上是时间序列的数据。我们可以比较各个不同时间点的用户量、增长率等等指标。</p>
+<h3 id="渠道"><a href="#渠道" class="headerlink" title="渠道"></a>渠道</h3><p>渠道是目前手游大部分用户的来源。我们可以通过用户质量、数量来评估渠道的推广效果。</p>
+<h2 id="新增用户"><a href="#新增用户" class="headerlink" title="新增用户"></a>新增用户</h2><p>新老用户的不同来自于用户加入游戏的时间节点。当然我们也可以自定义一个时间段，例如过去的一天或者一周。</p>
+<h3 id="游戏硬技术"><a href="#游戏硬技术" class="headerlink" title="游戏硬技术"></a>游戏硬技术</h3><p>回顾一个普通人称为游戏用户的过程：</p>
+<p>下载APP –&gt; 打开APP –&gt; 开始界面 –&gt; 注册/缓冲 –&gt; 进入游戏</p>
+<p>可想而知，用户在注册进入游戏之前还有一些步骤不可忽略，这些步骤如果一旦发生问题，那么用户很有可能失去游戏的耐心。例如闪退或者缓冲界面卡死等等BUG，这些地方的品质如果不能严格把控，那么再谈之后的任何环节都没有什么意义了。那么我们就需要针对游戏除了游戏本身之外的体验也需要重视起来，做好优化，例如：</p>
+<p>游戏响应速度优化<br>不是所有的手机都是旗舰高端机，我们在做产品的时候，对于硬件资源的消耗也要在一定的范围内，如果游戏时常出现卡顿，那么也会影响用户继续游戏的可能性。<br>耗电量优化<br>手机这个平台不仅仅是游戏，它还负载着很多其他的功能。如果耗电量过大的话，玩家进行游戏的时间无疑会被压缩。<br>网络流量<br>针对手机网游，我们对于游戏客户端和服务器之间通信产生的流量问题也需要关注</p>
+<h3 id="新增用户的分析"><a href="#新增用户的分析" class="headerlink" title="新增用户的分析"></a>新增用户的分析</h3><p>对于新增用户的分析有以下几个方面：</p>
+<p>新增用户+渠道分析</p>
+<p>新增用户结合渠道进行分析，可以得出渠道获客质量、效果等要素。</p>
+<p>新增用户+收入分析</p>
+<p>从新增用户的ARPU、ARPPU、付费转化率等指标切入，从最核心的收入方向对新增用户进行深度价值挖掘</p>
+<p>新增用户+游戏质量分析</p>
+<p>围绕着用户从下载APP到成功进行游戏之间的转化漏斗，分析那部分流失的用户是因为什么原因在体验游戏之前就放弃的</p>
+<h2 id="活跃用户"><a href="#活跃用户" class="headerlink" title="活跃用户"></a>活跃用户</h2><p>和新增用户一样，活跃用户的统计也离不开时间这个维度。我们同样可以用日、周、月来对活跃用户进行统计。“活跃”二字的普遍定义是在某一时间段有过登录的行为。但是不同的游戏也可以根据自身的游戏特点来自定义。在游戏生命周期中不同的时间点需要用不同的时间周期来衡量活跃用户的数量，例如在初期高速增长阶段，我们可以用日活(DAU)来做衡量，而在中后期稳定发展的阶段或者在分析中长期趋势的时候，用周活跃或者月活跃会更加方便。</p>
+<h3 id="AARRR模型"><a href="#AARRR模型" class="headerlink" title="AARRR模型"></a>AARRR模型</h3><p>AARRR模型是由TalkingData提出了一套用户分析的模型。本质上是基于营销和运营在投入和产出方面的分析，分析的角度是用户和用户的转化层面。从传统的成本分析的思路转化成用户价值分析的思路，从而确立了一些新的数据指标体系。</p>
+<h3 id="新老用户和留存"><a href="#新老用户和留存" class="headerlink" title="新老用户和留存"></a>新老用户和留存</h3><p>在活跃的用户中，从注册时间的远近来看有新活跃用户和老活跃用户的区分，在用户策略上，由于他们不用的特征属性，所以在分析时，把他们区分开会更有利。</p>
+<h3 id="活跃用户数量分析"><a href="#活跃用户数量分析" class="headerlink" title="活跃用户数量分析"></a>活跃用户数量分析</h3><p>活跃用户的数量从整体上反映了游戏的规模。如果游戏的人气的持续是靠推广和短期用户，而不是靠用户积累和自然的效应，那么这款游戏的活跃用户很有可能不稳定。但是并非所有不稳定的活跃用户数据都是这样，很多其他时间因素，例如季节、节假日等等，所以在分析用户数量的时间序列数据的时候，想要看趋势就要去掉其他周期性因素的影响。我们在观察的时候，就需要建立标准差区间来抵消季节、开学等因素的影响，从而区别哪些是真正的活跃度趋势变化，而哪些又是周期性的变化。</p>
+<h3 id="游戏时长分析"><a href="#游戏时长分析" class="headerlink" title="游戏时长分析"></a>游戏时长分析</h3><p>大体上来说，不管是游戏还是其他，本质上都是在争夺用户的时间。用户在这款游戏上花的时间越多，他就越有可能称为付费用户，甚至持续地为游戏付费掏钱。每种类型的用户，由于其特点不同，游戏时长也不同，所以，游戏时长也是一个很好的分析用户特征的角度，对分析用户对游戏的黏性很有帮助。</p>
+<h3 id="用户流失"><a href="#用户流失" class="headerlink" title="用户流失"></a>用户流失</h3><p>不论在一款游戏周期的什么阶段，流失用户都是无法避免的事情。我们需要做的就是尽可能的找出他们离开游戏的原因，优化游戏。或者建立用户的流失预测模型，在他们离开之前做一些运营动作尽可能的挽回他们。</p>
+<h3 id="生命周期分析"><a href="#生命周期分析" class="headerlink" title="生命周期分析"></a>生命周期分析</h3><p>DAU经过对比、趋势和拆解分析，则会反映产品的生命周期状态。</p>
+<h2 id="用户生命周期价值，LTV"><a href="#用户生命周期价值，LTV" class="headerlink" title="用户生命周期价值，LTV"></a>用户生命周期价值，LTV</h2><p>LTV用于计算用户在其生命周期内对游戏的平均价值.生命周期是指用户在给定的时间段内的活跃天数。游戏的平均价值是指用户对游戏的付费额。这是一个直接用收入来衡量的指标，也是另一个直接考察用户质量的指标。</p>
+<h3 id="LTV计算"><a href="#LTV计算" class="headerlink" title="LTV计算"></a>LTV计算</h3><p>其计算公式为：</p>
+<p>LTV = LT * ARPU</p>
+<p>LTV这个指标指的是一个用户的全生命周期贡献的价值，和中间一系列转换等都没有关系。其中，用户的生命周期可以从用户首次登录开始算起，每次的登录都要进行累加。而ARPU的计算可以取一段时期内的ARPU的平均值进行计算</p>
+<h3 id="LTV分析"><a href="#LTV分析" class="headerlink" title="LTV分析"></a>LTV分析</h3><p>对于大多数游戏而言，LTV的衰减速度并不是很有规律。一般都是前期衰减严重，后期衰减较小。采用一个函数来拟合分析并不是很有效，因此可以依据不同的时间段，采取分段函数进行分析。</p>
+<p>用户购买关联分析</p>
+<p>关联分析模型是从大量数据集中返现频繁出现的模式、关联和相关性。通过量化分析游戏中商品A的出现对商品B的出现有多大影响来发现关联规则。其中最经典也是最常用的算法是Apriori算法，其核心思想是通过链接产生候选项集及其支持度，然后通过剪枝生成频繁项集。</p>
+<h1 id="留存"><a href="#留存" class="headerlink" title="留存"></a>留存</h1><p>留存的用户指的是在某一个时间段内在登录游戏，经过一段时间后还在登录游戏的客户，他们所占的比例就是留存率。而那些离开的用户所占的比例就是流失率，这两个指标都是值得重点关注的。</p>
+<p>如果细分下去的话，还有不同阶段用户的留存率。鉴于目前大部分用户的来源都是渠道，那么此时对于留存率的考察都是基于激活用户的；那么等到用户开始付费的时候，可以设计付费留存率来考察这批人的情况。</p>
+<p>研究留存的过程就是研究用户在生命周期中转化的过程。一个用户，从一开始的新增用户，到称为活跃用户，最终称为稳定用户的这个过程，反映在留存率的曲线上就会很直观。留存率的曲线会像log函数曲线一样，从高到底，从快到慢地下降。直到进入稳定运行的阶段。</p>
+<h2 id="定义和计算"><a href="#定义和计算" class="headerlink" title="定义和计算"></a>定义和计算</h2><p>定义留存率的时候还是脱离不开时间这个节点。一般来讲，可以分为1日，3日，7日，14日，月，季度，半年等。如果针对同一天的新增用户，不同的时间点的留存率表达的就是他们过了一段时间后，还有多少留了下来，不同时间的留存率可以组成一个转化图表，就可以直观地看出这批用户的大致情况。</p>
+<p>当不对用户的进入时间作区分的话，那么每日对于留存率的考察也就没有必要在不同时间周日留存率之间比较了，因为他们有不是同一批客户的可能性。</p>
+<h2 id="留存分析"><a href="#留存分析" class="headerlink" title="留存分析"></a>留存分析</h2><p>留存率实际上只是一种表面上的工具，然而分析师在分析留存率的时候，需要了解留存率背后所折射的问题和影响因素。不管是留存率的根本影响因素还是在体验上，都涉及用户心理、产品机制和内容设计。简而言之就是尽可能的通过深层次的各方面的游戏设计将用户留在游戏中。对于留存率的分析可以有以下几个角度：</p>
+<h3 id="用户-1"><a href="#用户-1" class="headerlink" title="用户"></a>用户</h3><p>既然留存分析的是用户的转化全过程，那么最终留下来的一定就是对游戏厂商价值最大的客户。这样就准确定位了哪些人是有效的用户。用户在获取之后才是整个流程的开始，后面还需要经历一整个转化的阶段。</p>
+<p>在用户的获取激活阶段，有激活留存率可以用来衡量用户在激活阶段的留存率，它实际上反映的是游戏内容以外的各种技术上的质量。</p>
+<p>在用户获取之后的转换阶段，也可以通过定义不同的留存率来衡量不同阶段，不同类型的用户的留存表现，也就是在衡量整个业务的表现。也可以结合用户的在游戏中产生的数据进行分析，甚至是对用户进行特征建模。例如用户时长的分析，除去一些极低的游戏时间，剩下的应该是一个正态分布，如果不是的话，就要结合游戏本身的特点进行进一步的分析了。</p>
+<h3 id="产品和运营"><a href="#产品和运营" class="headerlink" title="产品和运营"></a>产品和运营</h3><p>当留存率进入一个稳定的时期之后，随着后续不断地运营活动，留存率会存在在一定范围内小幅波动的特征，也不是持续走低。也就是一个用户在成为稳定用户之后，会时不时的登录游戏，也就是说我们进行运营活动的目的就是尽可能的把新增用户转化成为稳定用户，让用户在游戏上付出时间、精力甚至金钱，让他们舍不得离开。</p>
+<h2 id="留存率优化"><a href="#留存率优化" class="headerlink" title="留存率优化"></a>留存率优化</h2><p>留存率的分析是一个整体，只有整体留存率维持在一个较好的水平上时，用户量才有保证。而一般来说，留存率过低是由于游戏质量出了问题，用户在经历了某一个阶段后选择放弃了游戏。那么我们可以有以下几个思路来做品质方面的优化：</p>
+<p>技术优化(进入游戏时长，硬件资源优化，网络优化等)<br>游戏关卡、难度等的设计(游戏是否过于简单或者过于复杂、是否缺乏友好的新手教程、初期是否太难)<br>游戏平衡优化(调整游戏平衡，是否某一职业优势过大)</p>
+<p>上面的优化都是针对游戏内容的，但是这种优化很有可能周期长，需要大量测试等等，我们还可以做一些运营活动作为短期暂时的补充优化：</p>
+<p>新手礼包<br>每日签到<br>等级奖励<br>周末、节日活动等等</p>
+<p>还可以针对某些渠道进行优化，例如一个渠道上用户的留存率太低，就可以适当的停止这个渠道继续的投入，并且把有限的精力放在存量上。</p>
+<h2 id="流失分析"><a href="#流失分析" class="headerlink" title="流失分析"></a>流失分析</h2><p>用户流失是指在一段时间内，用户离开游戏的情况。在时间维度上，普遍用周或者月这样的大范围时间进行衡量。针对流失的用户，我们希望能够知道：</p>
+<p>流失用户的特征(在游戏内容方面，例如游戏等级、游戏时长等等)<br>流失原因(从流失用户的综合特征中找出普遍的规律)<br>挽留策略(针对不同的原因的流失用户进行不同方式的挽留)<br>挽留效果评估<br>建立用户流失预测模型(通过用户流失前的种种行为特征进行建模，预测哪些用户即将成为流失用户，并有针对性的进行挽留)</p>
+<h1 id="渠道-1"><a href="#渠道-1" class="headerlink" title="渠道"></a>渠道</h1><p>渠道是用户获取的方式。渠道和用户的分析和总结是不可分离的，我们通过分析渠道来定位用户，通过分析用户来评价渠道。对于在各大厂商深耕存量的今天，在产品的推广营销领域，为了节约成本同时提高用户价值，粗犷的推广渐渐被精准的营销手法所替代。</p>
+<p>这就不可避免地需要不断地优化渠道，不外乎两个方向：</p>
+<p>市场方向，通过在用户质量、收入等方面反过来量化渠道的效果和价值，从而对渠道有较为全面的了解。<br>运营方向，同样也是从用户的深度研究出发，对不同的渠道、产品、用户进行区分，最大化渠道的特点和价值，提高渠道的性价比。</p>
+<h2 id="渠道追踪"><a href="#渠道追踪" class="headerlink" title="渠道追踪"></a>渠道追踪</h2><p>在移动游戏的时代，手机系统无非安卓(分包追踪）和iOS(短链接追踪)两种入口。有了这样的细分，我们在用户的入口方面又多了几个维度的细分了。</p>
+<h2 id="渠道数据分析框架总结"><a href="#渠道数据分析框架总结" class="headerlink" title="渠道数据分析框架总结"></a>渠道数据分析框架总结</h2><h3 id="渠道特点分析"><a href="#渠道特点分析" class="headerlink" title="渠道特点分析"></a>渠道特点分析</h3><p>我们在使用某种渠道之前，肯定需要通过直接或者间接的方式去了解渠道本身的特点。简单来讲，我们可以通过以下几个数据点来考察：</p>
+<p>品牌力<br>渠道的品牌不仅跟客户的数量、质量有关，还跟游戏的类型有关，也就是说我们还需要关注该渠道在哪种类型的游戏领域有品牌力，或者全领域都有。<br>体量<br>渠道的大小决定了客户的基数，但是绝不等同于客户的质量。<br>客户的特征<br>不同玩家的渠道有着不同的特征，也就有着不同的偏好，需要根据自身产品的特点谨慎选择。<br>出身<br>根据渠道的来自于那些应用市场来辅助判定玩家的主要属性。</p>
+<h3 id="产品、目标人群的渠道匹配"><a href="#产品、目标人群的渠道匹配" class="headerlink" title="产品、目标人群的渠道匹配"></a>产品、目标人群的渠道匹配</h3><p>我们开发一款游戏，总是有自己的目标人群，比如年龄段，主要性别，收入或者地域文化分布等等。这也就客观上决定了我们应该选择什么样的渠道进行推广。渠道的特点要和产品的特点进行适当的匹配，当然有时候不能完全匹配，但是至少要做到在主要因素方面没有冲突。游戏厂商可以通过多个维度来定义自己的游戏，简单举例，包括：</p>
+<p>游戏主题<br>策略，MOBA，卡牌，休息等等<br>客户年龄、性别<br>和游戏的主题有紧密联系，不同主题的游戏有着不一样的受众<br>游戏时间</p>
+<p>游戏时长<br>由游戏本身的设计决定，不同的游戏对一天中进行游戏的次数，每次进行游戏的时长有着不同的要求，例如MOBA类游戏一局游戏的时间可能要十几分钟到一个小时，建造类游戏的时长很短，但是会经常由于各种游戏情景进行登录<br>游戏时间段<br>不同的客户在当中不同的时间段的登录、游戏行为也会根据游戏性质的改变而改变。这一点又可以细分为年趋势和天趋势。<br>游戏设计<br>这是一个很宽泛的方面，包括难度递进的速度，关卡设计的方式，不同任务和玩法的适应性等等</p>
+<p>以上面特征维度为代表的变量定义了一款游戏的性质，我们就需要根据这些性质去匹配渠道。</p>
+<h3 id="渠道评价体系"><a href="#渠道评价体系" class="headerlink" title="渠道评价体系"></a>渠道评价体系</h3><p>既然用户和渠道是分不开的，那么我们就需要从用户的各个方面反过来对渠道进行评价，来衡量渠道的匹配情况，价值和成本。</p>
+<p>对于渠道的评价数据指标可以参考用户评价的指标来建设，二者对于用户的评价体系是相同的。但是不同的地方在于我们最终是要对渠道商做一个反馈出来。基于这样的思路，可能每个公司对于最终的想要优化的结果的定义不同，但是无论怎样定义，其以用户和价值作为核心的框架都不会变。</p>
+<p>雷达图式</p>
+<p>我们可以把多个评价的指标作为评价一个渠道商的几个分项，渠道一定是各有特点的，每个渠道专精的地方和类型也有可能不同。我们可以根据我们的每一个产品的不同特点有针对性的设计不同的指标体系，比如有的某一款游戏对几个用户的特点都有要求，就可以同时把这几个指标作为衡量的标准。</p>
+<p>线性模型评分模型</p>
+<p>另外一种方式就是线性模型，其优点是我们可以自定义每个指标的重要程度作为评价的参数，这当然要求在前期我们要对这些参数有足够深的认识。在雷达图中，本质上我们对所有指标的重视程度是一样的。</p>
+<h3 id="渠道的优化"><a href="#渠道的优化" class="headerlink" title="渠道的优化"></a>渠道的优化</h3><p>在我们完成了渠道的评价之后，自然就是根据评价对渠道进行优化了</p>
+<h1 id="收入"><a href="#收入" class="headerlink" title="收入"></a>收入</h1><h2 id="总体分析"><a href="#总体分析" class="headerlink" title="总体分析"></a>总体分析</h2><p>通常一款游戏的收入发生了变化(这里特质游戏的付费收入)，如果是上升的话我们要知道哪里做对了，如果收入下降的话我们要知道哪些环节出了问题。</p>
+<p>而游戏付费的收入=日活跃用户数 <em> 付费转化率 </em> 平均每位付费用户的收入。也就是说，游戏的收入可以被细分成3个部分：</p>
+<p>日活跃用户数，DAU –&gt; 有多少人在玩<br>付费转化率 –&gt; 玩的人有多少掏了钱<br>平均每付费用户收入，ARPPU –&gt; 掏了多少钱</p>
+<p>对于收入的变化，我们找出每个部门的贡献程度即可。</p>
+<p>日活跃用户已经在先前表述过，此处不再赘述</p>
+<h2 id="付费转化率分析"><a href="#付费转化率分析" class="headerlink" title="付费转化率分析"></a>付费转化率分析</h2><p>付费转化率 = 付费玩家/活跃玩家</p>
+<p>一个用户从免费的阶段转到付费的阶段是一个很重要的节点，这意味着这个用户肯为自己在游戏中的体验买单了。</p>
+<p>细分来看，付费玩家和活跃玩家的变化对于整体业务有着不同的意义：</p>
+<p>付费玩家上升；活跃玩家下降<br>有可能是一次性大量消费，例如运营活动等<br>付费玩家上升；活跃玩家上升<br>有效提升，或者产品初期的大规模增长<br>付费玩家下降；活跃玩家下降<br>产品品质出现问题，大量用户流失<br>付费玩家下降；活跃玩家上升<br>付费转化率出现问题，需要进一步分析原因</p>
+<h3 id="定义转化率"><a href="#定义转化率" class="headerlink" title="定义转化率"></a>定义转化率</h3><p>时间<br>首先在定义转化率的时候，不得不考虑的一个维度就是时间。不同的时间周期自然会衡量不同的转化率效果指标。<br>付费动机<br>付费用户是来源于免费用户，但是这个转化过程的动机却不同。距离来说，有些人是冲动消费，此后有可能他们就不再进行消费甚至不再进行游戏；有些人是理性消费，但是仅限于购买低级月卡会员或者某种特定道具等等。<br>付费金额<br>转化率衡量的只是一个比例，没有衡量付费金额。这是这个指标的一个缺点，在游戏行业尤其突出，因为游戏业的收入存在明显幂律趋势<br>结构<br>延续上一条的缺陷，我们可以通过先进一步将用户价值进行定义，在不同价值的用户下面再谈转化率，这样就合理多了。推而广之，这个结构化的转化率也可以从另一个时间角度分为新增用户，老用户等等。<br>上限<br>这个转化率是有明显上限的，在不同的阶段表现是不同的，例如在做了一个运营活动之后，转化率可能明显上升，但是后续的持续性却未必，我们用这些指标是想来对整个现状有一个精确的认识，所以这种上升一定要被识别出来。</p>
+<h3 id="付费玩家，APA"><a href="#付费玩家，APA" class="headerlink" title="付费玩家，APA"></a>付费玩家，APA</h3><p>就像上面所说的，在转化率的分析中，付费玩家只以个数计，并不以他们付费金额来统计。这就导致了不论这个玩家付了多少费，在付费转化率的分析的眼里都是一样的。但是很明显他们是不同的，因此，我们就需要对这些玩家的质量做深度的分析。</p>
+<p>所以我们就需要针对付费玩家也进行分层分析。观察的维度在于：</p>
+<p>付费的频次<br>付费的间隔<br>付费的道具<br>通过分析购买了什么样的游戏道具，通过建模，可以得到玩家使用道具的消费习惯，从而可以从这个维度展现用户分层的效果。</p>
+<p>在分层形成之后，把用户总结成金字塔的结构，从上到下价值依次减少。将用户结构化地分开，有助于后续精细化的运营操作。</p>
+<h3 id="付费转化率的影响因素"><a href="#付费转化率的影响因素" class="headerlink" title="付费转化率的影响因素"></a>付费转化率的影响因素</h3><p>如果转化率出现问题，那么我们就需要分析其原因。一个有效的思路就是沿着玩家从免费到付费的路径进行分析：</p>
+<p>事件触发 –&gt; 发现道具 –&gt; 找到道具 –&gt; 做出购买决策 –&gt; 道具使用效果反馈</p>
+<p>事件触发</p>
+<p>一般用户应该不会在什么都没有发生的情况下主要想到要去消费，一定是有一些事件对其产生了刺激，例如角色升级，被人攻打等等。为了获得下一步更好的体验，例如快速通过副本、或者获得周期性奖励等等，使得用户开始有了寻找解决方法的动机。</p>
+<p>发现道具、找到道具</p>
+<p>道具的推广有两种场景：</p>
+<p>日常的推广，例如进入界面的推广广告等等<br>事件触发时的推广，例如升级的之后，发生一个重要的游戏行为之后等</p>
+<p>做出决策</p>
+<p>在做决定之前大部分人都会想的问题是值不值。所以在游戏道具，甚至整个流程的策划过程中，都要考虑这些问题。不断地优化用户的游戏体验。</p>
+<p>售后</p>
+<p>玩家在购买之后，自己会对购买后对游戏的帮助有一个判断。这个判断很重要，足以影响到下一次的购买行为。同样地，这个和游戏的设计也有密不可分的关系。</p>
+<h3 id="付费转化率深度分析"><a href="#付费转化率深度分析" class="headerlink" title="付费转化率深度分析"></a>付费转化率深度分析</h3><p>付费转化率是一个单一的指标，如果我们结合其他指标同时进行分析的话，可能会得出不一样的结论来。</p>
+<p>首次购买和二次购买</p>
+<p>游戏中每一次的购买行为，我认为重要程度是不一样的。不只是首次购买值得分析，二次购买同样值得分析。</p>
+<p>首次购买</p>
+<p>首次购买是用户从一个免费用户到付费用户的一个重要的转换节点。说明玩家用真金白银在表达对产品的认可，玩家开始希望可以用钱来提升自己在游戏中的体验。一旦玩家在消费了一次过后，对于产品的黏性会比消费之前大大增加，毕竟为止花过钱的游戏不会轻易放弃。</p>
+<p>二次购买</p>
+<p>由于有一次性冲动消费的现象存在，会对首次购买这个行为衡量的效果打折。冲动过后，需要有持续不断的产品体验的提升来引导玩家进行第二次甚至更多次的消费。如果玩家在首次消费后没有得到自己想要的游戏体验，那么此时便会加速他流失的可能性。</p>
+<p>畅销付费</p>
+<p>一个游戏道具被多数人购买，从一定程度上可以反映玩家的某些特征和验证游戏设计点的好坏。</p>
+<p>促销效果</p>
+<h2 id="ARPU"><a href="#ARPU" class="headerlink" title="ARPU"></a>ARPU</h2><p>这个指标指的是活跃用户的平均付费值，我们可以根据需要在上面加上各种条件进行细分。例如：</p>
+<p>加上日、周或者月的条件限制，可以看到不同趋势，不同周期的收入情况<br>加上新旧用户的条件，可以观察到新用户和老用户分别的情况</p>
+<h2 id="ARPPU"><a href="#ARPPU" class="headerlink" title="ARPPU"></a>ARPPU</h2><p>因为免费游戏的收入趋势普遍呈现明显的幂律走势。所以在收入方面，任何以算数平均为算法的指标都变得不那么可靠。我们可以用百分位数来取代。</p>
+<h2 id="RFM模型"><a href="#RFM模型" class="headerlink" title="RFM模型"></a>RFM模型</h2><p>RFM是用来衡量用户的消费行为，从而为后续的决策提供依据。从三个维度对客户的价值进行划分，使得公司能更好地调配资源为有价值的客户提供服务。</p>
+<h3 id="付费时间间隔-Recency-R"><a href="#付费时间间隔-Recency-R" class="headerlink" title="付费时间间隔(Recency, R)"></a>付费时间间隔(Recency, R)</h3><p>R表示客户上次付费距离现在的间隔，也就是这个值越小，说明客户的价值越高</p>
+<h3 id="付费总次数-Frequency-F"><a href="#付费总次数-Frequency-F" class="headerlink" title="付费总次数(Frequency, F)"></a>付费总次数(Frequency, F)</h3><p>F表示在自定义的一段时间内，用户发生购买的次数，当然这个数越大越好</p>
+<h3 id="付费总金额-Monetary-M"><a href="#付费总金额-Monetary-M" class="headerlink" title="付费总金额(Monetary, M)"></a>付费总金额(Monetary, M)</h3><p>M表示一段时间内，用户在游戏上消费的金额，这个数值同样也是越大越好</p>
+<h3 id="付费客户分层"><a href="#付费客户分层" class="headerlink" title="付费客户分层"></a>付费客户分层</h3><p>通过RFM三个维度，我们就可以把客户分成几个层级。针对不同的层级，做有针对性的运营动作。</p>
+<h1 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h1><p>数据驱动的思路不仅可以体现在产品运营阶段，也可以体现在产品设计阶段。玩家在游戏中的行为可以被记录下来当做研究的数据。</p>
+<h2 id="游戏优化"><a href="#游戏优化" class="headerlink" title="游戏优化"></a>游戏优化</h2><p>购买支付流程</p>
+<p>产品设计人员可以结合一些数据找到玩家的购买特征，从而通过反复体验模拟这种购买行为，找出有哪些不方便的地方，有哪些地方的体验还可以提升</p>
+<p>游戏设计和运营</p>
+<p>从用户的购买过程分析用户在不同游戏阶段的购买需求，从这个需求出发，从一定意义上可以辅助游戏的设计。另外一方面，也可以指导游戏运营的时机和进程。</p>
+<h2 id="运营活动"><a href="#运营活动" class="headerlink" title="运营活动"></a>运营活动</h2><p>从数据分析的角度，运营活动主要可以收集玩家对于游戏的需求。</p>
+<p>我们可以从运营活动中的各个环节进行数据收集，有了数据才能做下一步的分析。一方面可以针对游戏内容进行改进，另一方面也可以对运营行为本身做出评价。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>索罗游</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://game.soloyogame.com/2018/09/28/游戏数据分析/" title="游戏数据分析">https://game.soloyogame.com/2018/09/28/游戏数据分析/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/游戏/" rel="tag"># 游戏</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/28/一个令人拍案叫绝的盈利模式/" rel="prev" title="一个令人拍案叫绝的盈利模式">
+                一个令人拍案叫绝的盈利模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQ1NC8xMzk4Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200"
+                alt="索罗游" />
+            
+              <p class="site-author-name" itemprop="name">索罗游</p>
+              <p class="site-description motion-element" itemprop="description">游戏平台开发文档</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#用户"><span class="nav-number">1.</span> <span class="nav-text">用户</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户分析的维度"><span class="nav-number">1.1.</span> <span class="nav-text">用户分析的维度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户的统计"><span class="nav-number">1.1.1.</span> <span class="nav-text">用户的统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平台"><span class="nav-number">1.1.2.</span> <span class="nav-text">平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间"><span class="nav-number">1.1.3.</span> <span class="nav-text">时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渠道"><span class="nav-number">1.1.4.</span> <span class="nav-text">渠道</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新增用户"><span class="nav-number">1.2.</span> <span class="nav-text">新增用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#游戏硬技术"><span class="nav-number">1.2.1.</span> <span class="nav-text">游戏硬技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增用户的分析"><span class="nav-number">1.2.2.</span> <span class="nav-text">新增用户的分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活跃用户"><span class="nav-number">1.3.</span> <span class="nav-text">活跃用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AARRR模型"><span class="nav-number">1.3.1.</span> <span class="nav-text">AARRR模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新老用户和留存"><span class="nav-number">1.3.2.</span> <span class="nav-text">新老用户和留存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#活跃用户数量分析"><span class="nav-number">1.3.3.</span> <span class="nav-text">活跃用户数量分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#游戏时长分析"><span class="nav-number">1.3.4.</span> <span class="nav-text">游戏时长分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户流失"><span class="nav-number">1.3.5.</span> <span class="nav-text">用户流失</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期分析"><span class="nav-number">1.3.6.</span> <span class="nav-text">生命周期分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户生命周期价值，LTV"><span class="nav-number">1.4.</span> <span class="nav-text">用户生命周期价值，LTV</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LTV计算"><span class="nav-number">1.4.1.</span> <span class="nav-text">LTV计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LTV分析"><span class="nav-number">1.4.2.</span> <span class="nav-text">LTV分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#留存"><span class="nav-number">2.</span> <span class="nav-text">留存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义和计算"><span class="nav-number">2.1.</span> <span class="nav-text">定义和计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#留存分析"><span class="nav-number">2.2.</span> <span class="nav-text">留存分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#产品和运营"><span class="nav-number">2.2.2.</span> <span class="nav-text">产品和运营</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#留存率优化"><span class="nav-number">2.3.</span> <span class="nav-text">留存率优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流失分析"><span class="nav-number">2.4.</span> <span class="nav-text">流失分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渠道-1"><span class="nav-number">3.</span> <span class="nav-text">渠道</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#渠道追踪"><span class="nav-number">3.1.</span> <span class="nav-text">渠道追踪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渠道数据分析框架总结"><span class="nav-number">3.2.</span> <span class="nav-text">渠道数据分析框架总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#渠道特点分析"><span class="nav-number">3.2.1.</span> <span class="nav-text">渠道特点分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#产品、目标人群的渠道匹配"><span class="nav-number">3.2.2.</span> <span class="nav-text">产品、目标人群的渠道匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渠道评价体系"><span class="nav-number">3.2.3.</span> <span class="nav-text">渠道评价体系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渠道的优化"><span class="nav-number">3.2.4.</span> <span class="nav-text">渠道的优化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#收入"><span class="nav-number">4.</span> <span class="nav-text">收入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#总体分析"><span class="nav-number">4.1.</span> <span class="nav-text">总体分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#付费转化率分析"><span class="nav-number">4.2.</span> <span class="nav-text">付费转化率分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义转化率"><span class="nav-number">4.2.1.</span> <span class="nav-text">定义转化率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#付费玩家，APA"><span class="nav-number">4.2.2.</span> <span class="nav-text">付费玩家，APA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#付费转化率的影响因素"><span class="nav-number">4.2.3.</span> <span class="nav-text">付费转化率的影响因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#付费转化率深度分析"><span class="nav-number">4.2.4.</span> <span class="nav-text">付费转化率深度分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARPU"><span class="nav-number">4.3.</span> <span class="nav-text">ARPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARPPU"><span class="nav-number">4.4.</span> <span class="nav-text">ARPPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RFM模型"><span class="nav-number">4.5.</span> <span class="nav-text">RFM模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#付费时间间隔-Recency-R"><span class="nav-number">4.5.1.</span> <span class="nav-text">付费时间间隔(Recency, R)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#付费总次数-Frequency-F"><span class="nav-number">4.5.2.</span> <span class="nav-text">付费总次数(Frequency, F)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#付费总金额-Monetary-M"><span class="nav-number">4.5.3.</span> <span class="nav-text">付费总金额(Monetary, M)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#付费客户分层"><span class="nav-number">4.5.4.</span> <span class="nav-text">付费客户分层</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#产品"><span class="nav-number">5.</span> <span class="nav-text">产品</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#游戏优化"><span class="nav-number">5.1.</span> <span class="nav-text">游戏优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运营活动"><span class="nav-number">5.2.</span> <span class="nav-text">运营活动</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">索罗游文档 -  <a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备11047967号</a></span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

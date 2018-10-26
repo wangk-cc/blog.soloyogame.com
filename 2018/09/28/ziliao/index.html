@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="这两天有朋友问我，他在设计他负责的一款产品时，遇到一个问题，他们的产品希望能够获取用户的性别、年龄，并且希望用户上传头像，为了避免用户的过多流失，又在填写这些资料的环节，都提供了可以跳过的功能。结果，绝大多数用户就真的跳过了，即使他们登录了，也毫无用处，产品无法对他们提供多好的服务，他很苦恼。 我这位朋友的问题其实非常普遍，许多产品经理在设计产品时都不知如何才能让用户填写资料，特别是希望用户能够主">
+<meta name="keywords" content="游戏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="APP产品，让用户心甘情愿填写资料的5个建议">
+<meta property="og:url" content="https://game.soloyogame.com/2018/09/28/ziliao/index.html">
+<meta property="og:site_name" content="索罗游文档">
+<meta property="og:description" content="这两天有朋友问我，他在设计他负责的一款产品时，遇到一个问题，他们的产品希望能够获取用户的性别、年龄，并且希望用户上传头像，为了避免用户的过多流失，又在填写这些资料的环节，都提供了可以跳过的功能。结果，绝大多数用户就真的跳过了，即使他们登录了，也毫无用处，产品无法对他们提供多好的服务，他很苦恼。 我这位朋友的问题其实非常普遍，许多产品经理在设计产品时都不知如何才能让用户填写资料，特别是希望用户能够主">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-17T08:28:36.489Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="APP产品，让用户心甘情愿填写资料的5个建议">
+<meta name="twitter:description" content="这两天有朋友问我，他在设计他负责的一款产品时，遇到一个问题，他们的产品希望能够获取用户的性别、年龄，并且希望用户上传头像，为了避免用户的过多流失，又在填写这些资料的环节，都提供了可以跳过的功能。结果，绝大多数用户就真的跳过了，即使他们登录了，也毫无用处，产品无法对他们提供多好的服务，他很苦恼。 我这位朋友的问题其实非常普遍，许多产品经理在设计产品时都不知如何才能让用户填写资料，特别是希望用户能够主">
+
+
+
+
+
+
+  <link rel="canonical" href="https://game.soloyogame.com/2018/09/28/ziliao/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>APP产品，让用户心甘情愿填写资料的5个建议 | 索罗游文档</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2bd3044b52292acde67f2a48dfa24786";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">索罗游文档</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">游戏平台开发文档</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://game.soloyogame.com/2018/09/28/ziliao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="索罗游">
+      <meta itemprop="description" content="游戏平台开发文档">
+      <meta itemprop="image" content="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="索罗游文档">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">APP产品，让用户心甘情愿填写资料的5个建议<a href="https://gitee.com/gitwk/cn.wangk.wk/edit/2018/source/_posts/ziliao.md" class="post-edit-link" title="编辑" target="_blank">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-28 22:18:34" itemprop="dateCreated datePublished" datetime="2018-09-28T22:18:34+08:00">2018-09-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-17 16:28:36" itemprop="dateModified" datetime="2018-10-17T16:28:36+08:00">2018-10-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这两天有朋友问我，他在设计他负责的一款产品时，遇到一个问题，他们的产品希望能够获取用户的性别、年龄，并且希望用户上传头像，为了避免用户的过多流失，又在填写这些资料的环节，都提供了可以跳过的功能。结果，绝大多数用户就真的跳过了，即使他们登录了，也毫无用处，产品无法对他们提供多好的服务，他很苦恼。</p>
+<p>我这位朋友的问题其实非常普遍，许多产品经理在设计产品时都不知如何才能让用户填写资料，特别是希望用户能够主动地、情愿地填写资料。关于这个问题，我简单整理了一下我一直以来的思考，按照重要性来一条条说一下。</p>
+<h1 id="只要求必要的，对猜不到为啥要的资料，解释为什么"><a href="#只要求必要的，对猜不到为啥要的资料，解释为什么" class="headerlink" title="只要求必要的，对猜不到为啥要的资料，解释为什么"></a>只要求必要的，对猜不到为啥要的资料，解释为什么</h1><p>只要必要的资料，是尊重用户的智商的表现，尽量只索取没有压力的资料，一旦有压力的资料，必要时才索取。有一些App简直丧心病狂，做一个天气App要求你填昵称、上传头像、选择性别甚至提供生日。这是毫无必要的，即使实在需要某些奇怪的、让人不能猜到你为什么要这个的资料，产品经理最好马上说明为啥要用户提供这个资料。许多时候，App索取通知权限、定位权限等也是这样。</p>
+<h1 id="让用户马上意识到价值"><a href="#让用户马上意识到价值" class="headerlink" title="让用户马上意识到价值"></a>让用户马上意识到价值</h1><p>这是说，在用户提供一项资料后，马上进行激励。激励的最好方式不是表扬“恭喜你成功地XXX”，而是接下来就马上让他看到收益或者说好处，比如根据前1项资料的填写，定制后续的初始化流程，又比如是“信息换信息”，他给了一个信息，你就返回一个他可能感兴趣的信息。让用户意识到价值，他才会愿意提供资料，甚至主动编辑资料。恰当的例子是知乎，人们希望签名、学校、职业的填写能够为自己带来粉丝，所以会在注册之后主动填写这些资料。</p>
+<h1 id="分步骤分场景来，不要一次性索取所有资料"><a href="#分步骤分场景来，不要一次性索取所有资料" class="headerlink" title="分步骤分场景来，不要一次性索取所有资料"></a>分步骤分场景来，不要一次性索取所有资料</h1><p>分步骤分场景来，不是说你在注册过程中，把资料分成多个步骤、多个页面来一个个要求用户填写，而是说，不要一次性索取所有资料，不同的资料应该在不同的场景中去填写。比如微信的用户，在没有过支付行为时，不必强迫他马上填写收货地址。这一点实际上和第2点是暗合的，在分步骤分场景时，当每一项资料的填写，都让用户在后续使用的过程中获得好处，后面的资料他自然就更愿意填写了。</p>
+<h1 id="用户都不蠢，你不如真诚点"><a href="#用户都不蠢，你不如真诚点" class="headerlink" title="用户都不蠢，你不如真诚点"></a>用户都不蠢，你不如真诚点</h1><p>跟用户说填写资料的原因时，要坦诚，不要虚头巴脑。市面上各种App有各式各样的求好评弹框，你的App在找到相对比较喜欢它的用户后（一般是活跃用户），在弹求好评弹框时，不如直接点告诉用户，他的好评能够帮助你有更多更好的发展、有面子点。当然这里新意很重要，要是人人都卖萌、人人都假真诚，那也很恶心。</p>
+<h1 id="通过一次填写-选择的方式，获得多重信息"><a href="#通过一次填写-选择的方式，获得多重信息" class="headerlink" title="通过一次填写/选择的方式，获得多重信息"></a>通过一次填写/选择的方式，获得多重信息</h1><p>尽量通过一次填写或选择，获得许多资料（或信息，这里的信息是比较泛的含义，不一定是一项资料）。昨天刚看到的一款叫做“生辰”的App，就是一个挺好的例子，它只要求用户提供生日，便获得了用户的年龄、星座等信息，在App内对这些信息多重使用。通过选择来获取一系列信息也是许多工具类App的常见做法，因为人通常可以划分成几种典型的类型。</p>
+<h1 id="终极办法是直接使用微信登录"><a href="#终极办法是直接使用微信登录" class="headerlink" title="终极办法是直接使用微信登录"></a>终极办法是直接使用微信登录</h1><p>大家应该都发现越来越多App，包括创业App，甚至大公司的App，都开始使用微信登录这些能够让用户一键提供一大堆资料的机制了。微信登录作为移动端登录态最充足广泛的第三方帐号登录机制，不只是腾讯系App，Nice、豆瓣、甚至百度地图等和腾讯没有任何牵连甚至是竞争对手的App，都开始重度依赖微信登录了。这必然是一个趋势。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>索罗游</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://game.soloyogame.com/2018/09/28/ziliao/" title="APP产品，让用户心甘情愿填写资料的5个建议">https://game.soloyogame.com/2018/09/28/ziliao/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/游戏/" rel="tag"># 游戏</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/28/yonghu/" rel="next" title="什么是用户？估计90%人不知道">
+                <i class="fa fa-chevron-left"></i> 什么是用户？估计90%人不知道
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/28/shujuzhibiao/" rel="prev" title="优化手机游戏收入的3类数据指标">
+                优化手机游戏收入的3类数据指标 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQ1NC8xMzk4Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200"
+                alt="索罗游" />
+            
+              <p class="site-author-name" itemprop="name">索罗游</p>
+              <p class="site-description motion-element" itemprop="description">游戏平台开发文档</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#只要求必要的，对猜不到为啥要的资料，解释为什么"><span class="nav-number">1.</span> <span class="nav-text">只要求必要的，对猜不到为啥要的资料，解释为什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#让用户马上意识到价值"><span class="nav-number">2.</span> <span class="nav-text">让用户马上意识到价值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分步骤分场景来，不要一次性索取所有资料"><span class="nav-number">3.</span> <span class="nav-text">分步骤分场景来，不要一次性索取所有资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户都不蠢，你不如真诚点"><span class="nav-number">4.</span> <span class="nav-text">用户都不蠢，你不如真诚点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过一次填写-选择的方式，获得多重信息"><span class="nav-number">5.</span> <span class="nav-text">通过一次填写/选择的方式，获得多重信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#终极办法是直接使用微信登录"><span class="nav-number">6.</span> <span class="nav-text">终极办法是直接使用微信登录</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">索罗游文档 -  <a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备11047967号</a></span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

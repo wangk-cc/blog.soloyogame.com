@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="坊间传言BAT三家各有所长：腾讯擅长产品，阿里擅长运营，百度擅长技术。其实也不无道理，这跟三家公司的创始人背景以及起家产品的特性息息相关，可以说正是对应的战略使得BAT三家早早地形成了竞争壁垒。阿里的电商业务本身就是强运营的产品，作为平台连接商户与买家，运营是冲在第一线与平台的两端用户对接，产品及技术则作为运营的后方支撑力量。 百度的搜索则是一项弱运营的产品，建立在技术积累形成的壁垒上。在与Goo">
+<meta name="keywords" content="游戏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="好产品是运营出来的">
+<meta property="og:url" content="https://game.soloyogame.com/2018/09/29/好产品是运营出来的/index.html">
+<meta property="og:site_name" content="索罗游文档">
+<meta property="og:description" content="坊间传言BAT三家各有所长：腾讯擅长产品，阿里擅长运营，百度擅长技术。其实也不无道理，这跟三家公司的创始人背景以及起家产品的特性息息相关，可以说正是对应的战略使得BAT三家早早地形成了竞争壁垒。阿里的电商业务本身就是强运营的产品，作为平台连接商户与买家，运营是冲在第一线与平台的两端用户对接，产品及技术则作为运营的后方支撑力量。 百度的搜索则是一项弱运营的产品，建立在技术积累形成的壁垒上。在与Goo">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-17T08:28:36.492Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="好产品是运营出来的">
+<meta name="twitter:description" content="坊间传言BAT三家各有所长：腾讯擅长产品，阿里擅长运营，百度擅长技术。其实也不无道理，这跟三家公司的创始人背景以及起家产品的特性息息相关，可以说正是对应的战略使得BAT三家早早地形成了竞争壁垒。阿里的电商业务本身就是强运营的产品，作为平台连接商户与买家，运营是冲在第一线与平台的两端用户对接，产品及技术则作为运营的后方支撑力量。 百度的搜索则是一项弱运营的产品，建立在技术积累形成的壁垒上。在与Goo">
+
+
+
+
+
+
+  <link rel="canonical" href="https://game.soloyogame.com/2018/09/29/好产品是运营出来的/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>好产品是运营出来的 | 索罗游文档</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2bd3044b52292acde67f2a48dfa24786";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">索罗游文档</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">游戏平台开发文档</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://game.soloyogame.com/2018/09/29/好产品是运营出来的/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="索罗游">
+      <meta itemprop="description" content="游戏平台开发文档">
+      <meta itemprop="image" content="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="索罗游文档">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">好产品是运营出来的<a href="https://gitee.com/gitwk/cn.wangk.wk/edit/2018/source/_posts/好产品是运营出来的.md" class="post-edit-link" title="编辑" target="_blank">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-29 13:54:06" itemprop="dateCreated datePublished" datetime="2018-09-29T13:54:06+08:00">2018-09-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-17 16:28:36" itemprop="dateModified" datetime="2018-10-17T16:28:36+08:00">2018-10-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>坊间传言BAT三家各有所长：腾讯擅长产品，阿里擅长运营，百度擅长技术。其实也不无道理，这跟三家公司的创始人背景以及起家产品的特性息息相关，可以说正是对应的战略使得BAT三家早早地形成了竞争壁垒。阿里的电商业务本身就是强运营的产品，作为平台连接商户与买家，运营是冲在第一线与平台的两端用户对接，产品及技术则作为运营的后方支撑力量。</p>
+<p>百度的搜索则是一项弱运营的产品，建立在技术积累形成的壁垒上。在与Google竞争的年代，正是得益于本地化搜索结果优于竞品，才使得百度取得优势性市场份额。Robin更是技术出身，这些年在百度内部一直提倡他的技术信仰，把未来赌在深度学习、百度大脑、人工智能等高技术壁垒的项目上。</p>
+<p>然而在移动互联网时代，产品、运营、技术三者孰更重要已经不再是争论的话题，只有三个职能模块成为缺一不可的协同体，才能打造出好的产品。作为一名在百度做非搜索业务的运营，和大家分享一下我在百度做运营的故事和我的运营观。</p>
+<h1 id="在一家技术主导的公司做运营是怎样一种体验？"><a href="#在一家技术主导的公司做运营是怎样一种体验？" class="headerlink" title="在一家技术主导的公司做运营是怎样一种体验？"></a>在一家技术主导的公司做运营是怎样一种体验？</h1><p>百度最早其实是没有运营的，那个时候竞争远没有现在激烈。大多数老板甚至是产品经理和研发的同事都会以为产品一上线，用户就涌进来了，其实不是。作为一名喜欢研究APP的运营，我手机里至少装了300个APP，大多数APP的命运是类似的，它们被隐藏在应用商店的深处，无人发现，无人下载，只能默默祈祷用户打开奇迹之门发现它们。而运营的作用正是让自家的产品有更多人知道、使用、喜欢、忠实，最后直接或间接产生收益。</p>
+<h2 id="运营如何和技术相处？"><a href="#运营如何和技术相处？" class="headerlink" title="运营如何和技术相处？"></a>运营如何和技术相处？</h2><p>自从来了百度之后，“技术上实现不了”这句话就很少再听见了。在一家技术主导的公司做运营，好处就是运营提出的需求，只要你想得清楚逻辑，方案清晰明了，剩下就是排期的事情了。想想当年在其他家做需求可真是难啊，一句“技术上实现不了”简直就是万能挡箭牌而且能堵得我无话可说，遂苦心学了基本的前端代码技能防止被忽悠。</p>
+<p>运营需求通常涉及前端开发比较多，我所在项目里的前端team，每次都很给力地做完我的需求，甚至不惜加大自己的工作量，告诉我还有哪些可以实现的技术可以用，问我要不要尝试。或许这就是Robin一直鼓吹的技术人的荣耀，他们不会轻易说出做不到。</p>
+<p>##运营和产品如何相处？</p>
+<p>我的运营观一直是“好产品是运营出来的”，其实是针对于业界过于夸大产品的价值，而导致运营人的价值并不为大家所知。为什么业界大佬包括马化腾雷布斯和老周都自封首席产品经理？因为产品经理是一个很好的挡箭牌。而运营策略是一门隐藏在背后的功夫，谁也不会说太多，在这时候重视用户体验、什么单点突破、极致思维，都是用来对外公关的说辞，大家听了千万别太当真。</p>
+<p>前数字公司VP李涛出来创业做APUS，有一次听他的分享，问APUS是怎样在一年内做到所谓“上亿”用户的？李涛回答“因为我们重视用户体验，因为我们的产品好”。发现没？大家都是这个套路，最核心的方法避而不谈。</p>
+<p>再好的产品，如果推广不出去没有用户，有什么卵用？再好的产品，如果对公司没有战略上或者营收上的贡献，有什么卵用？更何况，很多时候交到运营手中的是翔一样的产品。即使是一坨翔，运营也要捧起来，先干为敬，然后让用户接受、认可、喜欢，甚至发出由衷的赞叹：真是一坨好翔。而此刻，产品经理或许在乐呵自己的产品做得多牛逼。腾讯那么擅长做产品，为什么搜搜和易迅还是失败了？</p>
+<p>我无意冒犯产品经理的地位，产品和运营在很多时候是共同背负用户数KPI的一对难兄难弟。如果我们给某个产品赋予一个初始值1，那么运营则是在这个1基础上乘以10，使之变成10、100，甚至10000。没有产品的时候自然就为0，在后面加再多0也没有用。当然如果产品出来时初始状态只有0.1，运营同样有义务将其倍化到1000。遇上优秀的产品和技术团队，是作为一名运营的运气。我觉得有必要减少对产品的抱怨，在需要的时候应该给予产品足够的时间去成长。</p>
+<h1 id="产品运营到底做什么？"><a href="#产品运营到底做什么？" class="headerlink" title="产品运营到底做什么？"></a>产品运营到底做什么？</h1><p>任何一个产品，都来自对用户需求的满足，产品运营始终围绕产品目标的实现的三个元素：产品，用户，渠道。因此百度的运营通常分为内容运营(辅助产品功能)、用户运营和渠道运营三块。产品运营所做的工作围绕以下三个核心方面：</p>
+<p>● 扩大目标用户群：让更多人知道、使用、喜爱这个产品。<br>● 刺激用户活跃度：唤醒沉睡用户、召回流失用户、提高现有用户的使用频次及使用时长。<br>● 提高营收转化：商业产品最终都要走向营收转化这一步。</p>
+<p>我在百度做的是用户运营的工作，大体来说分为新用户获取、构建用户运营渠道矩阵、用户激励三个维度。</p>
+<h2 id="新用户获取"><a href="#新用户获取" class="headerlink" title="新用户获取"></a>新用户获取</h2><p>首先明确用户在哪儿，寻找到潜在用户的聚集地，确定打动用户的最佳利益点，通过运营活动等手段获取海量用户。</p>
+<h2 id="构建用户运营渠道矩阵"><a href="#构建用户运营渠道矩阵" class="headerlink" title="构建用户运营渠道矩阵"></a>构建用户运营渠道矩阵</h2><p>用户活跃在哪儿？用户运营的渠道矩阵就要布局到哪儿，社区、贴吧、微博、微信、QQ群、甚至是豆瓣、知乎等，当然不是每个渠道都需要同等对待，根据用户特点的不同，渠道的属性，有所侧重。</p>
+<p>比如QQ群，作为一个相对封闭的即时交流平台，很适合做核心用户与产品的交流，收集用户的需求反馈意见。贴吧/QQ空间的低龄化用户群特点，如果产品的用户群也偏低，就非常契合。而微信、微博等大众社交媒体平台由于用户跨所有年龄段，则适合做大众传播。</p>
+<h2 id="用户激励"><a href="#用户激励" class="headerlink" title="用户激励"></a>用户激励</h2><p>用户运营的角色有些像带着上帝视角的产品经理，根据不同的运营目标制定相应的游戏规则，激励引导用户往希望的方向去发展。对于物质奖励比较受用的用户，就用奖品/现金/红包等常见手段去刺激。对于精神荣誉比较受用的用户，则给予存在感、荣誉感。</p>
+<h1 id="运营人如何证明自己的价值？"><a href="#运营人如何证明自己的价值？" class="headerlink" title="运营人如何证明自己的价值？"></a>运营人如何证明自己的价值？</h1><p>很多人想知道如何一个月快速学会运营方法论，其实运营是没有方法论的，我们分享的都只是经验。如果说一定要总结一些共性，白崎认为一个好的运营至少要做到以下三点：</p>
+<h2 id="理解产品"><a href="#理解产品" class="headerlink" title="理解产品"></a>理解产品</h2><p>一切不离产品，脱离产品的运营等于0。你需要熟悉产品的历史及每一个功能点，理解用户的使用场景，知道产品最吸引用户的点在哪儿，能快速定位并解决用户提出的所有问题，甚至对产品本身有自己的思考，这一切都建立在对产品的理解上。</p>
+<h2 id="了解用户"><a href="#了解用户" class="headerlink" title="了解用户"></a>了解用户</h2><p>永远不要相信调研机构做的用户分析报告，虽然公司有专门的用户研究团队，但是我更愿意相信自己的感觉，因为我每天都和用户在接触，我自己也是用户，我会知道用户需要什么，关注点在哪儿。</p>
+<h2 id="懂常见运营手段"><a href="#懂常见运营手段" class="headerlink" title="懂常见运营手段"></a>懂常见运营手段</h2><p>新产品如何冷启动，种子用户去哪儿找，运营活动怎么做，现在微博上怎样最吸粉，微信上用哪种方式能够引爆朋友圈，大家都在做的H5页面有什么诀窍能够让粉丝愿意扩散。这些都是运营手段，属于“术”的层面。看一个运营人的水平，和看产品经理一样，要看他做过哪些成功的项目，也就是说要有自己的案例，用数字和case来证明自己的价值。空有数字，会误入盲目追求KPI的怪圈，空有case则毫无说服力。</p>
+<p>KPI导向是运营人都会遇到的问题，当一个产品面临营收压力时，商业化运营就会提上日程，很多产品经理觉得商业化运营与用户体验是冲突的，因此很抵制商业化。合理的商业化运营建立在对产品、用户的理解上，比如增值服务，本质上是在用户分层的基础上通过挖掘用户新需求去做定制化、个性化满足。</p>
+<p>好产品是运营出来的，坚信所有的产品都需要运营，所有的运营都要走心。运营是一份良心活儿，你付出了多少，用户是会感受得到的。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>索罗游</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://game.soloyogame.com/2018/09/29/好产品是运营出来的/" title="好产品是运营出来的">https://game.soloyogame.com/2018/09/29/好产品是运营出来的/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/游戏/" rel="tag"># 游戏</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/29/激怒用户的4大APP行为/" rel="next" title="激怒用户的4大APP行为">
+                <i class="fa fa-chevron-left"></i> 激怒用户的4大APP行为
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/29/策划一个高效的市场推广运营方案/" rel="prev" title="策划一个高效的市场推广运营方案">
+                策划一个高效的市场推广运营方案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQ1NC8xMzk4Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200"
+                alt="索罗游" />
+            
+              <p class="site-author-name" itemprop="name">索罗游</p>
+              <p class="site-description motion-element" itemprop="description">游戏平台开发文档</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在一家技术主导的公司做运营是怎样一种体验？"><span class="nav-number">1.</span> <span class="nav-text">在一家技术主导的公司做运营是怎样一种体验？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运营如何和技术相处？"><span class="nav-number">1.1.</span> <span class="nav-text">运营如何和技术相处？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#产品运营到底做什么？"><span class="nav-number">2.</span> <span class="nav-text">产品运营到底做什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新用户获取"><span class="nav-number">2.1.</span> <span class="nav-text">新用户获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建用户运营渠道矩阵"><span class="nav-number">2.2.</span> <span class="nav-text">构建用户运营渠道矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户激励"><span class="nav-number">2.3.</span> <span class="nav-text">用户激励</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运营人如何证明自己的价值？"><span class="nav-number">3.</span> <span class="nav-text">运营人如何证明自己的价值？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#理解产品"><span class="nav-number">3.1.</span> <span class="nav-text">理解产品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#了解用户"><span class="nav-number">3.2.</span> <span class="nav-text">了解用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#懂常见运营手段"><span class="nav-number">3.3.</span> <span class="nav-text">懂常见运营手段</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">索罗游文档 -  <a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备11047967号</a></span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

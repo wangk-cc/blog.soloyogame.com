@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="在国内，游戏行业的从业者众多，而每家游戏公司几乎都会囊括市场、运营、技术、设计等职位，今天我们就来详细聊一下游戏运营，给想入行的朋友们一些建议，以及给初入行的朋友们一些遗漏知识面上的扩充。 百科词条对于游戏运营的定义为：游戏运营是将一款游戏推入市场，通过对产品的运作，使用户从认识、了解到实际上线操作，最终成为游戏的忠实用户的这一过程。同时通过一系列的营销手段达到提高在线人数，刺激消费增长利润等目的">
+<meta name="keywords" content="游戏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="了解游戏运营">
+<meta property="og:url" content="https://game.soloyogame.com/2018/09/28/了解游戏运营/index.html">
+<meta property="og:site_name" content="索罗游文档">
+<meta property="og:description" content="在国内，游戏行业的从业者众多，而每家游戏公司几乎都会囊括市场、运营、技术、设计等职位，今天我们就来详细聊一下游戏运营，给想入行的朋友们一些建议，以及给初入行的朋友们一些遗漏知识面上的扩充。 百科词条对于游戏运营的定义为：游戏运营是将一款游戏推入市场，通过对产品的运作，使用户从认识、了解到实际上线操作，最终成为游戏的忠实用户的这一过程。同时通过一系列的营销手段达到提高在线人数，刺激消费增长利润等目的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-17T08:28:36.491Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="了解游戏运营">
+<meta name="twitter:description" content="在国内，游戏行业的从业者众多，而每家游戏公司几乎都会囊括市场、运营、技术、设计等职位，今天我们就来详细聊一下游戏运营，给想入行的朋友们一些建议，以及给初入行的朋友们一些遗漏知识面上的扩充。 百科词条对于游戏运营的定义为：游戏运营是将一款游戏推入市场，通过对产品的运作，使用户从认识、了解到实际上线操作，最终成为游戏的忠实用户的这一过程。同时通过一系列的营销手段达到提高在线人数，刺激消费增长利润等目的">
+
+
+
+
+
+
+  <link rel="canonical" href="https://game.soloyogame.com/2018/09/28/了解游戏运营/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>了解游戏运营 | 索罗游文档</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2bd3044b52292acde67f2a48dfa24786";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">索罗游文档</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">游戏平台开发文档</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://game.soloyogame.com/2018/09/28/了解游戏运营/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="索罗游">
+      <meta itemprop="description" content="游戏平台开发文档">
+      <meta itemprop="image" content="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="索罗游文档">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">了解游戏运营<a href="https://gitee.com/gitwk/cn.wangk.wk/edit/2018/source/_posts/了解游戏运营.md" class="post-edit-link" title="编辑" target="_blank">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-28 19:14:47" itemprop="dateCreated datePublished" datetime="2018-09-28T19:14:47+08:00">2018-09-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-17 16:28:36" itemprop="dateModified" datetime="2018-10-17T16:28:36+08:00">2018-10-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在国内，游戏行业的从业者众多，而每家游戏公司几乎都会囊括市场、运营、技术、设计等职位，今天我们就来详细聊一下游戏运营，给想入行的朋友们一些建议，以及给初入行的朋友们一些遗漏知识面上的扩充。</p>
+<p>百科词条对于游戏运营的定义为：游戏运营是将一款游戏推入市场，通过对产品的运作，使用户从认识、了解到实际上线操作，最终成为游戏的忠实用户的这一过程。同时通过一系列的营销手段达到提高在线人数，刺激消费增长利润等目的。</p>
+<p>可以看出，游戏运营的两个核心词是“用户”和“收入”，用户层面，我们在不断吸引新用户的情况下，稳定已进入游戏的老用户。收入层面，就是尽可能去促进玩家付费。而我们则需要在这两个层面之间找一个平衡点，最理想的情况就是在不损害用户游戏体验的情况下让玩家尽可能多付费。</p>
+<p>对于用户来说，玩游戏追求的就是玩的开心，或者是超越别人的成就感；对于公司来说，就是让用户玩的开心，然后让他们心甘情愿地付费，让用户最大化为其输出价值。</p>
+<p>对于很多尚未入行的朋友来说，可能会认为游戏运营只要把最好的游戏提供给玩家并让其玩的开心就好了，而游戏运营的工作远不止如此，刚开始可能有些枯燥繁琐，比如发公告、整理数据、传达信息等等，越往后，你就会发现运营的精髓所在。</p>
+<p>下面列举一下游戏运营工作所覆盖的范围：</p>
+<h1 id="一、游戏资料库的采集和建设"><a href="#一、游戏资料库的采集和建设" class="headerlink" title="一、游戏资料库的采集和建设"></a>一、游戏资料库的采集和建设</h1><p>拥有齐备的游戏资料库对于我们来说是很重要的，这里的游戏资料指的是：官网、官方论坛、官方贴吧等位置的攻略、活动公告、版本更新公告等信息的发布，齐备的游戏资料有利于吸引新玩家的入驻，试想一下，你看到一个游戏的官网很久不更新一篇公告，或者你刚进入游戏完全玩不懂，去官网找新手攻略却找不到的时候，你还会继续玩这个游戏吗？特别是对于策略类需要深入研究的游戏来说，更需要官方提供完整的数据库，以便玩家去深入研究游戏，比如MOBA游戏的出装，卡牌游戏的卡牌组合等等。</p>
+<p>当然，只靠官方的力量是很难创造出太多的游戏资料，这时候就需要借助玩家的力量，一个好的运营团队可以做好PGC和UGC的工作，也就是让用户来为我们提供资料，常用方法譬如有奖攻略征集活动等等。</p>
+<h1 id="二、竞品的调研"><a href="#二、竞品的调研" class="headerlink" title="二、竞品的调研"></a>二、竞品的调研</h1><p>竞品调研也是运营工作中很重要的一个环节，因为知己知彼方能百战不殆。如果我们是个页游产品，我们需要收集其他页游产品的渠道接入、推广等情况，如果我们是某个产品的渠道，我们需要收集其他渠道的开服情况来进行横向对比。如果我们是一款手游产品，我们需要收集其他手游产品过人的地方，来反馈给我们研发进行优化，比如某个产品留存和付费率很好，可以研究下其优势所在，取长补短。也要及时观察市面上哪些类型的手游势头正旺，打造出一款类似玩法但有差异化的产品。“吃鸡“手游很火的时候各大厂商相继布局就是一个很好的例子。</p>
+<h1 id="三、游戏版本的更新迭代"><a href="#三、游戏版本的更新迭代" class="headerlink" title="三、游戏版本的更新迭代"></a>三、游戏版本的更新迭代</h1><p>当然，更新迭代主要是研发的工作，但是我们如果能提供给研发更多的意见，可以产生事半功倍的效果。相比研发，运营距离用户更近，更懂得用户喜欢什么，不喜欢什么，游戏经常出哪些bug，是否外挂盛行等情况，这些都可以为研发的更新迭代起到一个很好的指导作用，比如游戏有某个bug严重影响玩家游戏体验，就可以及时反馈给研发优化更新修复这个bug。例如开服多少天后玩家付费率显著降低，就可以分析是哪些方面造成的付费率降低，从而去进行针对性的修改。</p>
+<h1 id="四、游戏日常的维护工作"><a href="#四、游戏日常的维护工作" class="headerlink" title="四、游戏日常的维护工作"></a>四、游戏日常的维护工作</h1><p>这项工作可能比较枯燥但是是游戏运营工作中必不可少的一项工作，例如开服合服、处理外挂、申请新服、玩家问题的处理，申请游戏版号等等。玩家问题的处理可能是最基本的，例如玩家找到客服说装备莫名丢失、账号下角色消失、战力突然降低很多、账号被盗等等情况，都需要我们来进行处理。虽然现在游戏内都有外挂自动检测系统，但由于系统还不完善或外挂的更新等原因，还是有“漏网之鱼”，这时候就需要运营和技术人员来核实玩家是否使用了外挂来对其进行处理，这也要求运营人员要对自己所运营的游戏有一定的了解。开服时间的确定也是很重要的，例如早上开服的效果好，我们就可以把以后的服尽量安排在早上开，另外也要对比每个服注册与付费情况，来确定最好的单服注册数是多少，这些都要经过长期的积累才可以找到答案的。</p>
+<h1 id="五、游戏后台的功能建设"><a href="#五、游戏后台的功能建设" class="headerlink" title="五、游戏后台的功能建设"></a>五、游戏后台的功能建设</h1><p>拥有一个好的游戏后台可以让运营者的工作事半功倍，我们在工作中也要看下当前游戏后台的功能是否够用，不够的话要及时和研发反馈进行优化，而拥有好的工具才可以提供更好的服务，玩家遇到问题找到客服，如果经常查不到想查的东西，很影响用户的游戏体验从而对用户留存产生影响，后台功能包括但不限于：发公告、发邮件、查询角色数据、禁言、解封、每日数据查看、在线玩家数量查看等功能。</p>
+<h1 id="六、游戏数据的分析"><a href="#六、游戏数据的分析" class="headerlink" title="六、游戏数据的分析"></a>六、游戏数据的分析</h1><p>数据分析是运营工作中必不可少的一部分，有兴趣的同学可以买点游戏数据分析相关的书籍仔细阅读一下，相信可以让你受益良多。为什么要做数据分析呢，还是那句话，知己知彼，从数据里面我们才能更了解我们的产品、我们的用户。比如我们一个区服导量1000注册和1500注册，玩家的付费情况相差无几，那么我们肯定选择1000注册来节约推广成本，而通过每日数据的分析，发现游戏是否存在异常情况，比如某一天的付费率突然变的很低，那么就要考虑游戏是否出现影响玩家付费的bug等，而做完专题活动后，也可以通过数据来分析此次活动效果如何，下次应该进行哪些调整等等。</p>
+<h1 id="七、专题活动的策划与跟进"><a href="#七、专题活动的策划与跟进" class="headerlink" title="七、专题活动的策划与跟进"></a>七、专题活动的策划与跟进</h1><p>一个好的运营，可以把一个月流水一百万的产品做到一百四十万，但是做到两百万是不现实的，因为这与产品的质量有很大关系，但是运营可以在这有限的范围内尽力发挥自己的才能，而拉动流水的一个很重要的手段就是专题活动。因为没有活动的情况下，不出意外玩家付费不会出现太多变动，而活动则可以达到我们想要的效果。当然，运营活动要适度，如果过度的话，虽然短期内可以让流水上涨很多，但从长远来看，很影响用户体验和极快缩游戏的生命周期，得不偿失。所以运营活动做起来容易，但要精通却很难，这背后也离不开数据的支持。</p>
+<h1 id="八、用户运营"><a href="#八、用户运营" class="headerlink" title="八、用户运营"></a>八、用户运营</h1><p>用户运营也是运营中很重要的一个部分，用户运营好的话，可以让用户更好留在我们游戏里面，从能让用户更多的输出价值，相反，用户流失加剧，而游戏人气也下降加快。用户运营的方式有很多，比如我们通过论坛来活跃玩家，促进玩家之间的交流，游戏经验的分享，同时做好论坛环境的优化等工作，玩家在论坛中的提问也尽量快速解答，有利于提升玩家对游戏的好感度，这些都是慢慢积累的。</p>
+<p>除上述所列八项以外，还有游戏IP影响力的提升、渠道关系的维护的工作，等我们在运营岗位上呆久了也会慢慢接触到。</p>
+<p>游戏运营工作中也常用到一些专业术语，最后列举出一些常用的术语供大家参考：</p>
+<ul>
+<li>AU：活跃用户     </li>
+<li>ARPU：每活跃用户收入    </li>
+<li>ARPPU：每付费用户收入    </li>
+<li>DAU：日活跃用户   </li>
+<li>MAU：月活跃用户</li>
+<li>PCU：最高同时在线人数     </li>
+<li>LTV：生命周期价值     </li>
+<li>ROI：投资回报率      </li>
+<li>KPI：关键绩效指标    </li>
+<li>PGC：专业生产内容</li>
+<li>UGC：用户生产内容    </li>
+<li>GM：游戏管理员</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>索罗游</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://game.soloyogame.com/2018/09/28/了解游戏运营/" title="了解游戏运营">https://game.soloyogame.com/2018/09/28/了解游戏运营/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/游戏/" rel="tag"># 游戏</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/28/游戏运营/" rel="next" title="游戏运营">
+                <i class="fa fa-chevron-left"></i> 游戏运营
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/28/手游发行的3大郁闷/" rel="prev" title="手游发行的3大郁闷">
+                手游发行的3大郁闷 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQ1NC8xMzk4Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200"
+                alt="索罗游" />
+            
+              <p class="site-author-name" itemprop="name">索罗游</p>
+              <p class="site-description motion-element" itemprop="description">游戏平台开发文档</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、游戏资料库的采集和建设"><span class="nav-number">1.</span> <span class="nav-text">一、游戏资料库的采集和建设</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、竞品的调研"><span class="nav-number">2.</span> <span class="nav-text">二、竞品的调研</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、游戏版本的更新迭代"><span class="nav-number">3.</span> <span class="nav-text">三、游戏版本的更新迭代</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、游戏日常的维护工作"><span class="nav-number">4.</span> <span class="nav-text">四、游戏日常的维护工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、游戏后台的功能建设"><span class="nav-number">5.</span> <span class="nav-text">五、游戏后台的功能建设</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、游戏数据的分析"><span class="nav-number">6.</span> <span class="nav-text">六、游戏数据的分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、专题活动的策划与跟进"><span class="nav-number">7.</span> <span class="nav-text">七、专题活动的策划与跟进</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、用户运营"><span class="nav-number">8.</span> <span class="nav-text">八、用户运营</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">索罗游文档 -  <a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备11047967号</a></span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

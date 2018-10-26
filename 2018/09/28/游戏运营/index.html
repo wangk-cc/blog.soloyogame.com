@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="游戏运营是一个琐碎苦逼但非常关键的岗位，你能体验到身为游戏奶牛和玩家保姆的双重体验，用“磨人”二字来形容游戏运营再合适不过。本文主要介绍游戏运营的一些基本知识，为刚踏入行业的运营小鲜肉们指点迷津，少走弯路。 什么是游戏运营从定义上，游戏运营是在游戏的整个生命周期里，把一款游戏推上线，有计划地实施产品运作策略和营销手段，使玩家不断了解游戏、入驻游戏并最终付费的过程，以达到提高游戏收入的目的。 游戏运">
+<meta name="keywords" content="游戏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="游戏运营">
+<meta property="og:url" content="https://game.soloyogame.com/2018/09/28/游戏运营/index.html">
+<meta property="og:site_name" content="索罗游文档">
+<meta property="og:description" content="游戏运营是一个琐碎苦逼但非常关键的岗位，你能体验到身为游戏奶牛和玩家保姆的双重体验，用“磨人”二字来形容游戏运营再合适不过。本文主要介绍游戏运营的一些基本知识，为刚踏入行业的运营小鲜肉们指点迷津，少走弯路。 什么是游戏运营从定义上，游戏运营是在游戏的整个生命周期里，把一款游戏推上线，有计划地实施产品运作策略和营销手段，使玩家不断了解游戏、入驻游戏并最终付费的过程，以达到提高游戏收入的目的。 游戏运">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-17T08:28:36.499Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="游戏运营">
+<meta name="twitter:description" content="游戏运营是一个琐碎苦逼但非常关键的岗位，你能体验到身为游戏奶牛和玩家保姆的双重体验，用“磨人”二字来形容游戏运营再合适不过。本文主要介绍游戏运营的一些基本知识，为刚踏入行业的运营小鲜肉们指点迷津，少走弯路。 什么是游戏运营从定义上，游戏运营是在游戏的整个生命周期里，把一款游戏推上线，有计划地实施产品运作策略和营销手段，使玩家不断了解游戏、入驻游戏并最终付费的过程，以达到提高游戏收入的目的。 游戏运">
+
+
+
+
+
+
+  <link rel="canonical" href="https://game.soloyogame.com/2018/09/28/游戏运营/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>游戏运营 | 索罗游文档</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2bd3044b52292acde67f2a48dfa24786";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">索罗游文档</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">游戏平台开发文档</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://game.soloyogame.com/2018/09/28/游戏运营/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="索罗游">
+      <meta itemprop="description" content="游戏平台开发文档">
+      <meta itemprop="image" content="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="索罗游文档">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">游戏运营<a href="https://gitee.com/gitwk/cn.wangk.wk/edit/2018/source/_posts/游戏运营.md" class="post-edit-link" title="编辑" target="_blank">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-28 19:09:09" itemprop="dateCreated datePublished" datetime="2018-09-28T19:09:09+08:00">2018-09-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-17 16:28:36" itemprop="dateModified" datetime="2018-10-17T16:28:36+08:00">2018-10-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>游戏运营是一个琐碎苦逼但非常关键的岗位，你能体验到身为游戏奶牛和玩家保姆的双重体验，用“磨人”二字来形容游戏运营再合适不过。本文主要介绍游戏运营的一些基本知识，为刚踏入行业的运营小鲜肉们指点迷津，少走弯路。</p>
+<h1 id="什么是游戏运营"><a href="#什么是游戏运营" class="headerlink" title="什么是游戏运营"></a>什么是游戏运营</h1><p>从定义上，游戏运营是在游戏的整个生命周期里，把一款游戏推上线，有计划地实施产品运作策略和营销手段，使玩家不断了解游戏、入驻游戏并最终付费的过程，以达到提高游戏收入的目的。</p>
+<p>游戏运营专员则是公司的一个岗位，负责产品预热、推产品上线、活动策划、数据分析、渠道运营、市场投放以及客服工作。</p>
+<p>在实际工作中，一个游戏的游戏运营不仅能胜任日常流程式的工作，还必须达到以下目的：</p>
+<h2 id="1、延长产品生命周期，提高用户粘性。"><a href="#1、延长产品生命周期，提高用户粘性。" class="headerlink" title="1、延长产品生命周期，提高用户粘性。"></a>1、延长产品生命周期，提高用户粘性。</h2><p>根据产品生命周期与市场调研结果，制定版本计划。因为一线运营人员掌握了游戏现存的BUG、玩家反馈、数据报告，能清晰地了解产品所处的生命周期、竞争状况，从而制定延长产品生命周期的版本计划，不断推出新资料、新版本，提高版本体验，令用户保持持久的期待。同时，对已经流失的用户加以研究，了解流失的等级、关卡和原因，为游戏优化做准备。</p>
+<h2 id="2、润滑每个部门，减少游戏事故的发生。"><a href="#2、润滑每个部门，减少游戏事故的发生。" class="headerlink" title="2、润滑每个部门，减少游戏事故的发生。"></a>2、润滑每个部门，减少游戏事故的发生。</h2><p>运营部门是连接开发人员、渠道、市场、玩家的节点，每个节点发生问题，运营都要积极沟通、协调配合，以减少游戏事故的发生。例如BUG提交跟进与修正，活动效果跟踪与反馈、支付平台突发事件等等，积极主动的沟通是非常必要的。</p>
+<h2 id="3、提高游戏收入。"><a href="#3、提高游戏收入。" class="headerlink" title="3、提高游戏收入。"></a>3、提高游戏收入。</h2><p>运营部是提升游戏收入的关键部门，例行事务不能衡量运营人员工作的好坏，游戏的月流水、总流水、arpu才是最关键的。有了收入，才能给各部门发工资，才能推进市场投放计划、开展各种线上线下活动;同时，高收入的手游在渠道排名越高、推荐位越靠前，导致雪球效应。</p>
+<h1 id="游戏运营工作职能的分类"><a href="#游戏运营工作职能的分类" class="headerlink" title="游戏运营工作职能的分类"></a>游戏运营工作职能的分类</h1><p>游戏运营的工作非常庞杂琐碎，运营专员甚至被冠以“打杂”的头衔，不过根据职能所起的作用分为八个模块，具体如下：</p>
+<h2 id="1、活动策划"><a href="#1、活动策划" class="headerlink" title="1、活动策划"></a>1、活动策划</h2><p>活动策划是游戏利润生成的关键职位，需要协调玩家、产品、KPI之间的关系。玩家是否买账关系活动效果的好坏，而产品本身是否支持活动进行则决定了活动能否开展，当然了，活动策划受雇于公司，老板有KPI的要求、短期或长期的计划，也需要考虑该活动带来的利润。</p>
+<p>活动策划的职责是设计活动(线上线下)、统计分析活动效果并作出反馈。</p>
+<h2 id="2、数据分析"><a href="#2、数据分析" class="headerlink" title="2、数据分析"></a>2、数据分析</h2><p>数据分析的前提是数据统计，即把目标区服、渠道一定周期内的游戏数据统计出来，包括登陆数、活跃数、活跃时段、留存率、付费率等。但统计数据并非最终目的，以现有数据分析玩家状况、提出版本及活动优化建议，才是数据分析员的本质工作。</p>
+<h2 id="3、渠道运营"><a href="#3、渠道运营" class="headerlink" title="3、渠道运营"></a>3、渠道运营</h2><p>即与各大市场的商务负责人取得联系，谈分成、排期、推荐计划，并推产品上线;在产品上线后，维护渠道论坛与专区，配合渠道做活动与分发礼包等。</p>
+<h2 id="4、媒体运营"><a href="#4、媒体运营" class="headerlink" title="4、媒体运营"></a>4、媒体运营</h2><p>从事媒体运营的员工称为媒介，是负责产品外部宣传、对产品形象负责的人员，根据产品不同测试阶段的要求，做外宣计划并执行。主要工作有软文撰写投稿、媒体礼包投放、推荐位预约、广告创意设计、制定软广投放计划并执行，主要对游戏的百度指数、渠道热度、产品形象负责。</p>
+<h2 id="5、市场推广"><a href="#5、市场推广" class="headerlink" title="5、市场推广"></a>5、市场推广</h2><p>监控产品上线后各大市场的下载、登陆数据、市场评论，进行各项提升产品排名、市场热度及好评率的操作，如投放CPA、CPC、刷好评等。</p>
+<h2 id="6、事件管理"><a href="#6、事件管理" class="headerlink" title="6、事件管理"></a>6、事件管理</h2><p>即处理游戏运营过程中的例行事务与突发事件，例如制定开服计划并通知渠道与运维，游戏维护提前通知、维护补偿的发放、日常数据异常的监控。</p>
+<h2 id="7、玩家管理"><a href="#7、玩家管理" class="headerlink" title="7、玩家管理"></a>7、玩家管理</h2><p>这是一向面对玩家的工作，但并不是像客服那样直接玩家打交道，而是根据玩家的付费率、付费金额、VIP等级、活跃等指标，进行VIP玩家管理，收集玩家的BUG建议并择优提交相关人员，跟进BUG解决的进度。制定充值返利的额度与折扣。</p>
+<h2 id="8、社区管理"><a href="#8、社区管理" class="headerlink" title="8、社区管理"></a>8、社区管理</h2><p>社区是一个玩家聚集的地方，包括QQ群、贴吧、论坛、公会、游戏盒子等，玩家与玩家之间直接交流，往往也是玩家抱怨、建议以及问题出现最频繁的地方。一个好的社区管理员，能处理意见建议、平息玩家怨气、及时安抚，还能提高社区的活跃、做出社区的特色。比如UC的公会有公会群、社区以及QQ群，论坛的热度直接影响新游期待榜的排名。</p>
+<h1 id="工作流程及能力要求"><a href="#工作流程及能力要求" class="headerlink" title="工作流程及能力要求"></a>工作流程及能力要求</h1><p>以上对游戏运营的岗位职能做了全面的介绍，相信看客们已有比较全面的认识。下面阐述游戏运营的工作流程及各个岗位的能力要求。</p>
+<h2 id="工作流程："><a href="#工作流程：" class="headerlink" title="工作流程："></a>工作流程：</h2><p>游戏运营工作围绕游戏的所处的各个测试阶段(封测-内测-公测)，以产品为中心，考虑测试阶段的目的，开展相应工作，这个流程不是线性的，而是环形的。后一个测试期是前一个测试期工作内容的复制及充实，唯一的区别是玩家数量的多少、需求的深浅。</p>
+<h2 id="1、封测期"><a href="#1、封测期" class="headerlink" title="1、封测期"></a>1、封测期</h2><p>所谓封测，是封闭式测试的简称，即选取少数玩家参与游戏的第一次面市。这部分玩家是在开发期通过游戏预热、IP优势而产生的种子用户，非常忠诚，往往成为第一批付费用户。</p>
+<p>封测前期运营要做的事很多，商务洽谈合作分成、拉商务讨论组、准备游戏测试，建立游戏专用交流QQ群、贴吧、论坛，媒介外发软文、宣传游戏创意。</p>
+<p>封测期一般是删档的，进行压力测试和游戏试水。关键任务是维护第一批玩家的口碑、保持游戏热度，看看DAU、留存、付费率等运营指标。封测数据对游戏在渠道与市场的位置非常重要，例如UC九游将根据封测数据，对游戏划分成三六九等，对评级为A+、S级以上的游戏配备完备的专区、论坛及宣传位置，即所谓的深度合作。</p>
+<h2 id="2、内测期"><a href="#2、内测期" class="headerlink" title="2、内测期"></a>2、内测期</h2><p>与封测的区别是对全体市场玩家开放下载，内测又分为删档内测与不删档内测。内测前期，媒体运营按广告投放计划，进行广告预热内测期游戏运营的工作基本走上了正轨，每个岗位每天都循序渐进地履行自己的职能。如渠道运营开始按期向渠道申请活动支持与推荐申请;市场推广进行硬广投放，活动策划开展大范围的活动(充值、消耗、活跃)，数据分析计算周期性登陆、留存、付费数据……</p>
+<h2 id="3、公测期"><a href="#3、公测期" class="headerlink" title="3、公测期"></a>3、公测期</h2><p>游戏公测前往往有版本更替，在活动模板、功能、UI上会有较大的调整，新一轮的产品外宣与市场投放又开始了，渠道排名靠前、曝光度高的游戏能有获得较好的下载量与付费。</p>
+<p>公测1——3个月内，游戏线上线下活动非常关键，玩家维护工作也非常冗杂，开服速度与版本更替更加频繁，因此是运营的黄金期，加班加点是常有的事，周末也要安排值班。</p>
+<h2 id="能力要求："><a href="#能力要求：" class="headerlink" title="能力要求："></a>能力要求：</h2><p>运营入门的门槛不高(大专以上)，经验往往比学历更为重要，但互联网行业是一个更新换代极快的朝阳行业，如果不能在短期内充实提升专业素养，被淘汰或啃老本是在所难免的，因为运营岗也是人员流动较为频繁的岗位。</p>
+<p>但不可否认的是，一个资深的运营是产品成功的关键，手游有短现、快速的特点，生命只在3个月到一年之间，因此手游的运营在短期内承担的责任很重，能吃苦、有耐心的、学习能力强的人比较适合这个岗位。</p>
+<h1 id="下面来谈谈胜任运营岗位有哪些能力要求。"><a href="#下面来谈谈胜任运营岗位有哪些能力要求。" class="headerlink" title="下面来谈谈胜任运营岗位有哪些能力要求。"></a>下面来谈谈胜任运营岗位有哪些能力要求。</h1><h2 id="1、快速学习并迅速掌握新知识的能力。"><a href="#1、快速学习并迅速掌握新知识的能力。" class="headerlink" title="1、快速学习并迅速掌握新知识的能力。"></a>1、快速学习并迅速掌握新知识的能力。</h2><p>作为运营人员，需要丰富的游戏素养，了解市场主流游戏的运营模式，运营人员需要一定的游戏龄，至少深入玩2款游戏以上，但我们不是“玩”游戏，而是学习游戏。</p>
+<p>另外，运营人员需要广博的知识素养与完备的市场信息，从各大游戏媒体、渠道公布的信息中提炼出重要的干货，时刻保持对比、研究的姿态，让信息在脑中汇成一条河，对整个市场形成比较清晰的认识。</p>
+<h2 id="2、流畅亲和的沟通技巧。"><a href="#2、流畅亲和的沟通技巧。" class="headerlink" title="2、流畅亲和的沟通技巧。"></a>2、流畅亲和的沟通技巧。</h2><p>运营岗是连接开发者、渠道、玩家、老板之间的重要岗位，有效沟通非常重要。游戏功能优化、版本更新，需要与策划人员达成共识，策划通过下达需求统领技术人员开发、测试人员测试</p>
+<p>渠道方负责的游戏很多，平均每个人至少5款以上，因此少说废话、直击重点是必要的;当需要向渠道方申请推荐位时，人际关系也起到重要作用，例如上线应用宝70%靠与商务之间的关系。运营岗位与玩家的沟通体现在各类公告、事件处理、VIP玩家服务上，单方交流较多，因此表达方式的谦恭有礼、不卑不亢、原则性非常重要。</p>
+<h2 id="3、超一流的软件操作能力。"><a href="#3、超一流的软件操作能力。" class="headerlink" title="3、超一流的软件操作能力。"></a>3、超一流的软件操作能力。</h2><p>运营工作需要依赖excel、word、PPT等办公软件的应用，这些软件人们常常用，但用得精的人比较少。运营人员需要制定简洁明了的版本计划、数据分析文件、软文撰写甚至网编工具，很多是重复性的工作，除了耐心之外，速度也很重要。老板让你一天之内把昨天全区全服的数据统计出来，多达几百张表格，熟练的人根本不用花多少时间整合，而把大部分时间花在分析数据上面。</p>
+<p>网编工具、绘图软件，什么都能拿得起放得下，对你的工作大有裨益。</p>
+<h2 id="4、统筹视野，执行力强。"><a href="#4、统筹视野，执行力强。" class="headerlink" title="4、统筹视野，执行力强。"></a>4、统筹视野，执行力强。</h2><p>优秀的运营人员是不间断地主动发现问题并且执行力很强的人，具有全局视野，根据游戏的市场表现和所处的阶段调整运营策略。</p>
+<p>比如活动策划，很多活动策划像挤牙膏一样，老板有KPI指标压力时才开始思考做什么类型的活动、周期持续多久，常常拍脑袋决定，没有通过数据分析与活动效果对比，这样做出来的活动不能称之为精品。控制折扣价与生命周期、玩家现有道具之间的关系，是一个活动策划应该时刻掌握的技能。</p>
+<p>媒体运营并非整个生命周期内都要炒得热火朝天，当游戏处于衰退期，官网渐渐停止更新、客服淡出玩家视野，让一批玩家自然淘汰，媒介人员也无需再炒作了。</p>
+<h1 id="结语："><a href="#结语：" class="headerlink" title="结语："></a>结语：</h1><p>游戏运营的工作非常琐碎冗杂，以上仅介绍了各岗位的职能与能力要求，如需深入了解各大职能的细节与技巧，还需长期实践，每一个职能都能成为独立的专题，善用QuickSDK之类的第三方工具辅助，可以更好完成精细化运营，提升更多工作效率。 很多人羡慕游戏运营，甚至不惜从客服做起，其实每个岗位都有独特的优势，掌握更多技巧与知识，对工作必定有所裨益。已经成为运营、或者立志成为运营的人，都要在长期的实践经验中多多主动，做出流水在千万级的作品。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>索罗游</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://game.soloyogame.com/2018/09/28/游戏运营/" title="游戏运营">https://game.soloyogame.com/2018/09/28/游戏运营/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/游戏/" rel="tag"># 游戏</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/28/我国网络游戏盈利模式分析/" rel="next" title="我国网络游戏盈利模式分析">
+                <i class="fa fa-chevron-left"></i> 我国网络游戏盈利模式分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/28/了解游戏运营/" rel="prev" title="了解游戏运营">
+                了解游戏运营 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQ1NC8xMzk4Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200"
+                alt="索罗游" />
+            
+              <p class="site-author-name" itemprop="name">索罗游</p>
+              <p class="site-description motion-element" itemprop="description">游戏平台开发文档</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是游戏运营"><span class="nav-number">1.</span> <span class="nav-text">什么是游戏运营</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、延长产品生命周期，提高用户粘性。"><span class="nav-number">1.1.</span> <span class="nav-text">1、延长产品生命周期，提高用户粘性。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、润滑每个部门，减少游戏事故的发生。"><span class="nav-number">1.2.</span> <span class="nav-text">2、润滑每个部门，减少游戏事故的发生。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、提高游戏收入。"><span class="nav-number">1.3.</span> <span class="nav-text">3、提高游戏收入。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#游戏运营工作职能的分类"><span class="nav-number">2.</span> <span class="nav-text">游戏运营工作职能的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、活动策划"><span class="nav-number">2.1.</span> <span class="nav-text">1、活动策划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、数据分析"><span class="nav-number">2.2.</span> <span class="nav-text">2、数据分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、渠道运营"><span class="nav-number">2.3.</span> <span class="nav-text">3、渠道运营</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、媒体运营"><span class="nav-number">2.4.</span> <span class="nav-text">4、媒体运营</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、市场推广"><span class="nav-number">2.5.</span> <span class="nav-text">5、市场推广</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、事件管理"><span class="nav-number">2.6.</span> <span class="nav-text">6、事件管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、玩家管理"><span class="nav-number">2.7.</span> <span class="nav-text">7、玩家管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、社区管理"><span class="nav-number">2.8.</span> <span class="nav-text">8、社区管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工作流程及能力要求"><span class="nav-number">3.</span> <span class="nav-text">工作流程及能力要求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作流程："><span class="nav-number">3.1.</span> <span class="nav-text">工作流程：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、封测期"><span class="nav-number">3.2.</span> <span class="nav-text">1、封测期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、内测期"><span class="nav-number">3.3.</span> <span class="nav-text">2、内测期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、公测期"><span class="nav-number">3.4.</span> <span class="nav-text">3、公测期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能力要求："><span class="nav-number">3.5.</span> <span class="nav-text">能力要求：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下面来谈谈胜任运营岗位有哪些能力要求。"><span class="nav-number">4.</span> <span class="nav-text">下面来谈谈胜任运营岗位有哪些能力要求。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、快速学习并迅速掌握新知识的能力。"><span class="nav-number">4.1.</span> <span class="nav-text">1、快速学习并迅速掌握新知识的能力。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、流畅亲和的沟通技巧。"><span class="nav-number">4.2.</span> <span class="nav-text">2、流畅亲和的沟通技巧。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、超一流的软件操作能力。"><span class="nav-number">4.3.</span> <span class="nav-text">3、超一流的软件操作能力。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、统筹视野，执行力强。"><span class="nav-number">4.4.</span> <span class="nav-text">4、统筹视野，执行力强。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语："><span class="nav-number">5.</span> <span class="nav-text">结语：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">索罗游文档 -  <a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备11047967号</a></span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
